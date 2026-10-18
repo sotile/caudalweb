@@ -1,0 +1,159 @@
+{
+  "id": "rincon",
+  "name": "Iglesia Cristiana Evangélica Rincón",
+  "region": "Argentina",
+  "url": "https://iglesiarincon.org/",
+  "capturedAt": "2026-10-17T23:43:37.546Z",
+  "viewport": {
+    "width": 1440,
+    "height": 1000
+  },
+  "available": true,
+  "navigationError": null,
+  "response": {
+    "status": 200,
+    "url": "https://iglesiarincon.org/"
+  },
+  "dismissal": null,
+  "title": "Inicio - Iglesia Rincón",
+  "text": "54 351 3426046 info@iglesiarincon.org   \n \nInicio\n \nLa Iglesia\n \nEn Línea\n \nLa Revista de Rincón\n \nMiembros\n \nContacto\n¡Bienvenidos a Casa!\nIglesia Rincón, una comunidad que ama a Dios.\nSomos una iglesia que desea dar la bienvenida a todos.\n\nAmamos a Dios y a las personas.\nQueremos ser el medio para que muchos puedan encontrar y experimentar a Dios en sus vidas, en quien tenemos propósito y esperanza. Visítenos y conozca del amor de Dios que le hará sentirse como en casa.\n\nh\nLa Revista de Rincón\n\nDescubre articulos y noticias especialmente organizadas para ti.\n\n\nPodcast\n\nDisfruta de los distintos programas y estudios de la palabra de Dios.\n\n\nEn Línea\n\nMira los distintos sermones durante la semana en diferentes horarios.\n\n  \nÁrea de comunicación - Iglesia Rincón\n¿Quiere recibir notificaciones?\nNO, GRACIAS SERÍA GENIAL\n\n×",
+  "headings": [
+    "¡Bienvenidos a Casa!"
+  ],
+  "links": [
+    {
+      "text": "",
+      "href": "https://www.facebook.com/iglesiarincon/"
+    },
+    {
+      "text": "",
+      "href": "https://twitter.com/icerincon"
+    },
+    {
+      "text": "",
+      "href": "https://www.instagram.com/iglesiarincon/"
+    },
+    {
+      "text": "Facebook",
+      "href": "https://www.facebook.com/iglesiarincon/"
+    },
+    {
+      "text": "X",
+      "href": "https://twitter.com/icerincon"
+    },
+    {
+      "text": "Instagram",
+      "href": "https://www.instagram.com/iglesiarincon/"
+    },
+    {
+      "text": "",
+      "href": "https://iglesiarincon.org/"
+    },
+    {
+      "text": "Inicio",
+      "href": "https://iglesiarincon.org/"
+    },
+    {
+      "text": "La Iglesia",
+      "href": "https://iglesiarincon.org/la-iglesia/"
+    },
+    {
+      "text": "",
+      "href": "https://iglesiarincon.org/declaracion-de-fe/"
+    },
+    {
+      "text": "En Línea",
+      "href": "https://bit.ly/3JrUfb5"
+    },
+    {
+      "text": "La Revista de Rincón",
+      "href": "https://iglesiarincon.org/revista/"
+    },
+    {
+      "text": "Miembros",
+      "href": "https://iglesiarincon.org/miembros/"
+    },
+    {
+      "text": "Contacto",
+      "href": "https://iglesiarincon.org/contacto/"
+    },
+    {
+      "text": "Inicio",
+      "href": "https://iglesiarincon.org/"
+    },
+    {
+      "text": "La Iglesia",
+      "href": "https://iglesiarincon.org/la-iglesia/"
+    },
+    {
+      "text": "Declaración de Fe",
+      "href": "https://iglesiarincon.org/declaracion-de-fe/"
+    },
+    {
+      "text": "En Línea",
+      "href": "https://bit.ly/3JrUfb5"
+    },
+    {
+      "text": "La Revista de Rincón",
+      "href": "https://iglesiarincon.org/revista/"
+    },
+    {
+      "text": "Miembros",
+      "href": "https://iglesiarincon.org/miembros/"
+    },
+    {
+      "text": "Contacto",
+      "href": "https://iglesiarincon.org/contacto/"
+    },
+    {
+      "text": "",
+      "href": "https://iglesiarincon.org/tres-cosas-que-deberias-saber/"
+    },
+    {
+      "text": "",
+      "href": "https://iglesiarincon.org/oramos-por-vos/"
+    },
+    {
+      "text": "",
+      "href": "https://iglesiarincon.online.church/"
+    },
+    {
+      "text": "",
+      "href": "https://iglesiarincon.org/visitanos/"
+    },
+    {
+      "text": "h",
+      "href": "https://iglesiarincon.org/revista/"
+    },
+    {
+      "text": "La Revista de Rincón",
+      "href": "https://iglesiarincon.org/revista/"
+    },
+    {
+      "text": "",
+      "href": "https://bit.ly/3JrUfb5"
+    },
+    {
+      "text": "En Línea",
+      "href": "https://bit.ly/3JrUfb5"
+    },
+    {
+      "text": "",
+      "href": "https://www.facebook.com/iglesiarincon/"
+    },
+    {
+      "text": "",
+      "href": "https://twitter.com/icerincon"
+    },
+    {
+      "text": "",
+      "href": "https://www.instagram.com/iglesiarincon/"
+    }
+  ],
+  "styles": {
+    "background": "rgb(255, 255, 255)",
+    "font": "\"Open Sans\", Helvetica, Arial, Lucida, sans-serif",
+    "headingFont": "Lato, Helvetica, Arial, Lucida, sans-serif"
+  },
+  "height": 2415
+}

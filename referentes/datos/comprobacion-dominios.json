@@ -1,0 +1,47 @@
+[
+  {
+    "host": "www.iebcordoba.org",
+    "dns": false,
+    "error": "[Errno 8] nodename nor servname provided, or not known"
+  },
+  {
+    "host": "iebcordoba.org",
+    "dns": false,
+    "error": "[Errno 8] nodename nor servname provided, or not known"
+  },
+  {
+    "host": "elreyjesus.org.ar",
+    "dns": false,
+    "error": "[Errno 8] nodename nor servname provided, or not known"
+  },
+  {
+    "host": "www.elreyjesus.org.ar",
+    "dns": false,
+    "error": "[Errno 8] nodename nor servname provided, or not known"
+  },
+  {
+    "host": "iglesiaadoracion.org",
+    "dns": false,
+    "error": "[Errno 8] nodename nor servname provided, or not known"
+  },
+  {
+    "host": "www.iglesiaadoracion.org",
+    "dns": false,
+    "error": "[Errno 8] nodename nor servname provided, or not known"
+  },
+  {
+    "host": "centrodeadoracion.org",
+    "dns": false,
+    "error": "[Errno 8] nodename nor servname provided, or not known"
+  },
+  {
+    "host": "www.centrodeadoracion.org",
+    "dns": false,
+    "error": "[Errno 8] nodename nor servname provided, or not known"
+  },
+  {
+    "host": "missio.com.ar",
+    "dns": false,
+    "error": "[Errno 8] nodename nor servname provided, or not known"
+  }
+]

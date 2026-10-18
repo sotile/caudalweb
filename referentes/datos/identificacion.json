@@ -1,0 +1,29 @@
+{
+  "fecha": "2026-10-17",
+  "criterio": "Identificación por nombre, ubicación y descripción institucional de fuentes primarias; no se presume relación con dominios originalmente fallidos.",
+  "referencias": [
+    {
+      "id": "rey-jesus",
+      "url": "https://iglesiaelreyjesus.com.ar/",
+      "nota": "La portada identifica a Iglesia El Rey Jesús en José A. Cabrera 4656, Palermo. La denominación bautista de la lista original no se pudo confirmar."
+    },
+    {
+      "id": "centro-adoracion",
+      "url": "https://iglesiacda-2023.my.canva.site/oficial",
+      "nota": "Sitio de Centro de Adoración · Ministerio Altares, Villa Sarmiento. El nombre genérico de la lista original no permite asegurar que fuera la congregación inicialmente pretendida."
+    },
+    {
+      "id": "adoracion",
+      "estado": "No identificada de forma fiable en Buenos Aires",
+      "homonimoDescartado": "https://adoracion.co/",
+      "evidencia": "La sección de contacto declara Carrera 50 # 75–136, Barranquilla, Colombia."
+    },
+    {
+      "id": "ieb-cordoba",
+      "url": "https://iebcordoba.es/",
+      "estado": "Referencia confirmada por el cliente",
+      "ubicacion": "Calle Vicente Aleixandre 4, Córdoba, España",
+      "nota": "Reemplaza el portal argentino provisional y pasa a Mundo."
+    }
+  ]
+}

@@ -1,0 +1,27 @@
+{
+  "id": "adoracion",
+  "name": "Iglesia Adoración",
+  "region": "Argentina",
+  "url": "chrome-error://chromewebdata/",
+  "capturedAt": "2026-10-17T23:43:28.602Z",
+  "viewport": {
+    "width": 1440,
+    "height": 1000
+  },
+  "available": false,
+  "navigationError": "net::ERR_NAME_NOT_RESOLVED",
+  "response": null,
+  "dismissal": null,
+  "title": "iglesiaadoracion.org",
+  "text": "No se puede acceder a este sitio\n\nRevisa que no haya errores de ortografía en iglesiaadoracion.org.\n\nDNS_PROBE_FINISHED_NXDOMAIN\nVolver a cargar",
+  "headings": [
+    "No se puede acceder a este sitio"
+  ],
+  "links": [],
+  "styles": {
+    "background": "rgb(32, 33, 36)",
+    "font": "system-ui, sans-serif",
+    "headingFont": "system-ui, sans-serif"
+  },
+  "height": 1000
+}

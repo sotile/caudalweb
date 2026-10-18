@@ -1,0 +1,27 @@
+{
+  "desktop": {
+    "cards": 12,
+    "verified": 11,
+    "pending": 1,
+    "overflow": false,
+    "broken": []
+  },
+  "filters": {
+    "world": 7,
+    "argentina": 5,
+    "search": [
+      "bethel"
+    ]
+  },
+  "selection": {
+    "open": true,
+    "count": 3,
+    "capped": true
+  },
+  "lightbox": true,
+  "mobile": {
+    "overflow": false,
+    "width": 390
+  },
+  "errors": []
+}

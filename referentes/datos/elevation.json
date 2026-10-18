@@ -1,0 +1,402 @@
+{
+  "id": "elevation",
+  "name": "Elevation Church",
+  "region": "Mundo",
+  "url": "https://www.elevationchurch.org/",
+  "capturedAt": "2026-10-17T23:42:54.862Z",
+  "viewport": {
+    "width": 1440,
+    "height": 1000
+  },
+  "available": true,
+  "navigationError": null,
+  "response": {
+    "status": 200,
+    "url": "https://www.google.com/recaptcha/enterprise/anchor?ar=1&k=6LcNoZMqAAAAAEwwebwvUJdFkPfd6EB5zhFxPq1w&co=aHR0cHM6Ly93d3cuZWxldmF0aW9uY2h1cmNoLm9yZzo0NDM.&hl=es-419&v=4EDjxXf4knsx6UBM1L2V6cv8&size=invisible&anchor-ms=20000&execute-ms=30000&cb=vxp2dad6ch8g"
+  },
+  "dismissal": null,
+  "title": "Welcome Home - Elevation Church",
+  "text": "Este sitio web utiliza tecnologías como cookies para habilitar la funcionalidad esencial del sitio, así como para analítica, personalización y publicidad dirigida. Para obtener más información, consulte el siguiente enlace: Política de privacidadPolítica de cookies\nAdministrar preferencias\nSkip to main content\nSkip to main nav\n​\n\nGive\n\nGroups\n\nServe\n\nEvents\n\nAbout\n\nWelcome to Elevation Church\n\nSee what God can do through you.\n\nGet connected\nLearn more\nPastor Stephen Chandler\n\nWatch the latest sermon\n\nWatch sermon\nWatch full experience\nFind the right experience for you\n\nNo matter where you are, online or in person, become a part of all God is doing.\n\nPhysical Campus\n\nWorship with us in person at one of our physical campuses.\n\nFind a location\nLive Streams\n\neFam is our online community who stream church from wherever they are.\n\nFind a time\nWatch Party\n\nWatch Parties are groups of eFam that stream the worship experience together.\n\nFind a watch party\nPop-Up\n\nA Pop-Up is where we bring church to different cities across the nation.\n\nFind a pop-up\nDiscover more ways to connect\n\nThere are always new ways to participate in what God is doing through our church, including events, tours, worship music, and so much more.\n\nA New Devotional For You\n\nStart the plan today\n\nWorship With Us\n\nPurchase your tickets today\n\nInvite Your Friends & Family\n\nJoin us for food and fun\n\nBuild Generational Faith\n\nSign up to serve in eKidz\n\nServe Your Community\n\nLearn more\n\nA New Devotional For You\n\nStart the plan today\n\nWorship With Us\n\nPurchase your tickets today\n\nInvite Your Friends & Family\n\nJoin us for food and fun\n\nBuild Generational Faith\n\nSign up to serve in eKidz\n\nServe Your Community\n\nLearn more\n\nA New Devotional For You\n\nStart the plan today\n\nWorship With Us\n\nPurchase your tickets today\n\nA place for you and your family\n\nJoin small groups, get involved in outreach, and discover ways for your whole family to grow in their faith.\n\nConnecting people. Activating faith.\n\neGroup Ministry\n\nLearn more\nMaking an impact – locally and globally.\n\nOutreach Ministry\n\nLearn more\nPartnering with parents to develop kids’ faith.\n\nChildren’s Ministry\n\nLearn more\nDeveloping youth who influence culture.\n\nYouth Ministry\n\nLearn more\nBuilding community. Deepening faith.\n\nYoung Adult Ministry\n\nLearn more\nWhere calling meets college.\n\nElevation College\n\nLearn more\nInspiring your faith and creating an atmosphere of worship to God.\n\nWorship Ministry\n\nLearn more\nHow to get involved\n\nSee how God can use your gifts to make an eternal impact.\n\nVolunteer\n\nParticipate in the mission to advance the gospel by serving on a volunteer team.\n\nLearn more\nLead\n\nLead an eGroup, host a Watch Party or become a student leader.\n\nLearn more\nOpportunities\n\nExplore opportunities to use your gifts in a ministry setting.\n\nLearn more",
+  "headings": [
+    "Welcome to Elevation Church",
+    "Pastor Stephen Chandler",
+    "Find the right experience for you",
+    "Physical Campus",
+    "Live Streams",
+    "Watch Party",
+    "Pop-Up",
+    "Discover more ways to connect",
+    "A New Devotional For You",
+    "Worship With Us",
+    "Invite Your Friends & Family",
+    "Build Generational Faith",
+    "Serve Your Community",
+    "A New Devotional For You",
+    "Worship With Us",
+    "Invite Your Friends & Family",
+    "Build Generational Faith",
+    "Serve Your Community",
+    "A New Devotional For You",
+    "Worship With Us",
+    "A place for you and your family",
+    "Connecting people. Activating faith.",
+    "Making an impact – locally and globally.",
+    "Partnering with parents to develop kids’ faith.",
+    "Developing youth who influence culture.",
+    "Building community. Deepening faith.",
+    "Where calling meets college.",
+    "Inspiring your faith and creating an atmosphere of worship to God.",
+    "How to get involved",
+    "Volunteer",
+    "Lead",
+    "Opportunities"
+  ],
+  "links": [
+    {
+      "text": "Política de privacidad",
+      "href": "https://www.elevationchurch.org/privacy-policy"
+    },
+    {
+      "text": "Política de cookies",
+      "href": "https://www.elevationchurch.org/cookies"
+    },
+    {
+      "text": "Skip to main content",
+      "href": "https://www.elevationchurch.org/#main-content"
+    },
+    {
+      "text": "Skip to main nav",
+      "href": "https://www.elevationchurch.org/#main-nav"
+    },
+    {
+      "text": "",
+      "href": "https://www.elevationchurch.org/"
+    },
+    {
+      "text": "Give",
+      "href": "https://www.elevationchurch.org/giving"
+    },
+    {
+      "text": "Groups",
+      "href": "https://www.elevationchurch.org/egroups"
+    },
+    {
+      "text": "Serve",
+      "href": "https://www.elevationchurch.org/eteams"
+    },
+    {
+      "text": "Events",
+      "href": "https://www.elevationchurch.org/events"
+    },
+    {
+      "text": "About",
+      "href": "https://www.elevationchurch.org/about"
+    },
+    {
+      "text": "Sermons",
+      "href": "https://www.elevationchurch.org/sermons"
+    },
+    {
+      "text": "Locations",
+      "href": "https://www.elevationchurch.org/locations"
+    },
+    {
+      "text": "About",
+      "href": "https://www.elevationchurch.org/about"
+    },
+    {
+      "text": "Giving",
+      "href": "https://www.elevationchurch.org/giving"
+    },
+    {
+      "text": "Groups",
+      "href": "https://www.elevationchurch.org/egroups"
+    },
+    {
+      "text": "Serving",
+      "href": "https://www.elevationchurch.org/eteams"
+    },
+    {
+      "text": "Store",
+      "href": "https://www.elevationchurch.org/store"
+    },
+    {
+      "text": "Events",
+      "href": "https://www.elevationchurch.org/events"
+    },
+    {
+      "text": "Streaming",
+      "href": "https://www.elevationchurch.org/streaming"
+    },
+    {
+      "text": "Get connected",
+      "href": "https://www.elevationchurch.org/connect"
+    },
+    {
+      "text": "Learn more",
+      "href": "https://www.elevationchurch.org/about"
+    },
+    {
+      "text": "Get connected",
+      "href": "https://www.elevationchurch.org/connect"
+    },
+    {
+      "text": "Learn more",
+      "href": "https://www.elevationchurch.org/about"
+    },
+    {
+      "text": "Watch sermon",
+      "href": "https://www.elevationchurch.org/sermons/he-hasnt-forgotten-you-pastor-stephen-chandler"
+    },
+    {
+      "text": "Watch full experience",
+      "href": "https://www.elevationchurch.org/on-demand"
+    },
+    {
+      "text": "Watch sermon",
+      "href": "https://www.elevationchurch.org/sermons/he-hasnt-forgotten-you-pastor-stephen-chandler"
+    },
+    {
+      "text": "Watch full experience",
+      "href": "https://www.elevationchurch.org/on-demand"
+    },
+    {
+      "text": "Find a location",
+      "href": "https://www.elevationchurch.org/locations"
+    },
+    {
+      "text": "Find a time",
+      "href": "https://www.elevationchurch.org/streaming"
+    },
+    {
+      "text": "Find a watch party",
+      "href": "https://www.elevationchurch.org/locations?meetingType=watch-party"
+    },
+    {
+      "text": "Find a pop-up",
+      "href": "https://www.elevationchurch.org/pop-ups"
+    },
+    {
+      "text": "A New Devotional For You\n\nStart the plan today",
+      "href": "https://www.bible.com/reading-plans/77589-see-king-jesus-the-perspective-that-changes-ev"
+    },
+    {
+      "text": "Worship With Us\n\nPurchase your tickets today",
+      "href": "https://www.elevationworship.com/tour"
+    },
+    {
+      "text": "Invite Your Friends & Family\n\nJoin us for food and fun",
+      "href": "https://www.elevationchurch.org/fall-fest/ballantyne?locationModal=true"
+    },
+    {
+      "text": "Build Generational Faith\n\nSign up to serve in eKidz",
+      "href": "https://connect-v2.elevationchurch.org/eteams"
+    },
+    {
+      "text": "Serve Your Community\n\nLearn more",
+      "href": "https://www.elevationchurch.org/outreach/holiday-hope-events"
+    },
+    {
+      "text": "A New Devotional For You\n\nStart the plan today",
+      "href": "https://www.bible.com/reading-plans/77589-see-king-jesus-the-perspective-that-changes-ev"
+    },
+    {
+      "text": "Worship With Us\n\nPurchase your tickets today",
+      "href": "https://www.elevationworship.com/tour"
+    },
+    {
+      "text": "Invite Your Friends & Family\n\nJoin us for food and fun",
+      "href": "https://www.elevationchurch.org/fall-fest/ballantyne?locationModal=true"
+    },
+    {
+      "text": "Build Generational Faith\n\nSign up to serve in eKidz",
+      "href": "https://connect-v2.elevationchurch.org/eteams"
+    },
+    {
+      "text": "Serve Your Community\n\nLearn more",
+      "href": "https://www.elevationchurch.org/outreach/holiday-hope-events"
+    },
+    {
+      "text": "A New Devotional For You\n\nStart the plan today",
+      "href": "https://www.bible.com/reading-plans/77589-see-king-jesus-the-perspective-that-changes-ev"
+    },
+    {
+      "text": "Worship With Us\n\nPurchase your tickets today",
+      "href": "https://www.elevationworship.com/tour"
+    },
+    {
+      "text": "Learn more",
+      "href": "https://www.elevationchurch.org/egroups/about"
+    },
+    {
+      "text": "Learn more",
+      "href": "https://www.elevationchurch.org/outreach"
+    },
+    {
+      "text": "Learn more",
+      "href": "https://www.elevationchurch.org/ekidz"
+    },
+    {
+      "text": "Learn more",
+      "href": "https://www.elevationchurch.org/youth"
+    },
+    {
+      "text": "Learn more",
+      "href": "https://www.elevationchurch.org/young-adults"
+    },
+    {
+      "text": "Learn more",
+      "href": "https://elevationcollege.com/"
+    },
+    {
+      "text": "Learn more",
+      "href": "https://elevationworship.com/"
+    },
+    {
+      "text": "Learn more",
+      "href": "https://www.elevationchurch.org/eteams"
+    },
+    {
+      "text": "Learn more",
+      "href": "https://www.elevationchurch.org/lead"
+    },
+    {
+      "text": "Learn more",
+      "href": "https://www.elevationchurch.org/opportunities"
+    },
+    {
+      "text": "",
+      "href": "https://www.elevationchurch.org/#main-content"
+    },
+    {
+      "text": "",
+      "href": "https://www.elevationchurch.org/locations"
+    },
+    {
+      "text": "",
+      "href": "https://www.elevationchurch.org/streaming"
+    },
+    {
+      "text": "",
+      "href": "https://www.elevationchurch.org/egroups"
+    },
+    {
+      "text": "",
+      "href": "https://www.elevationchurch.org/giving"
+    },
+    {
+      "text": "",
+      "href": "https://www.elevationchurch.org/eteams"
+    },
+    {
+      "text": "",
+      "href": "https://www.elevationchurch.org/events"
+    },
+    {
+      "text": "",
+      "href": "https://www.elevationchurch.org/salvation"
+    },
+    {
+      "text": "",
+      "href": "https://www.elevationchurch.org/baptism"
+    },
+    {
+      "text": "",
+      "href": "https://www.elevationchurch.org/contact?scrollto=request-form"
+    },
+    {
+      "text": "",
+      "href": "https://www.elevationchurch.org/sermons"
+    },
+    {
+      "text": "",
+      "href": "https://www.elevationchurch.org/studies"
+    },
+    {
+      "text": "",
+      "href": "https://store.elevationchurch.org/"
+    },
+    {
+      "text": "",
+      "href": "https://www.elevationchurch.org/outreach"
+    },
+    {
+      "text": "",
+      "href": "https://www.elevationchurch.org/nextgen"
+    },
+    {
+      "text": "",
+      "href": "https://www.elevationchurch.org/young-adults"
+    },
+    {
+      "text": "",
+      "href": "https://www.elevationchurch.org/jobs/about"
+    },
+    {
+      "text": "",
+      "href": "https://www.elevationchurch.org/apprenticeships"
+    },
+    {
+      "text": "",
+      "href": "https://www.elevationchurch.org/internship"
+    },
+    {
+      "text": "",
+      "href": "https://www.elevationcollege.com/"
+    },
+    {
+      "text": "",
+      "href": "https://www.elevationchurch.org/about"
+    },
+    {
+      "text": "",
+      "href": "https://www.elevationchurch.org/beliefs-values"
+    },
+    {
+      "text": "",
+      "href": "https://myelevation.elevationchurch.org/"
+    },
+    {
+      "text": "",
+      "href": "https://www.elevationchurch.org/contact"
+    },
+    {
+      "text": "",
+      "href": "https://www.elevationchurch.org/cookies"
+    },
+    {
+      "text": "",
+      "href": "https://www.elevationchurch.org/terms-of-use"
+    },
+    {
+      "text": "",
+      "href": "https://www.elevationchurch.org/privacy-policy"
+    },
+    {
+      "text": "",
+      "href": "https://www.facebook.com/elevationchurch.org/"
+    },
+    {
+      "text": "",
+      "href": "https://www.instagram.com/elevationchurch"
+    },
+    {
+      "text": "",
+      "href": "https://twitter.com/@elevationchurch"
+    },
+    {
+      "text": "",
+      "href": "https://www.youtube.com/@elevationchurch"
+    },
+    {
+      "text": "",
+      "href": "https://www.tiktok.com/@elevationchurch"
+    }
+  ],
+  "styles": {
+    "background": "rgb(10, 10, 10)",
+    "font": "\"DM Sans\", \"DM Sans Fallback\"",
+    "headingFont": "\"DM Sans\", \"DM Sans Fallback\""
+  },
+  "height": 4320
+}

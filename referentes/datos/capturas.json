@@ -1,0 +1,98 @@
+[
+  {
+    "id": "life",
+    "available": true,
+    "title": "You’re Welcome Here",
+    "url": "https://www.life.church/",
+    "capturedAt": "2026-10-17T23:42:47.905Z",
+    "identityNote": null
+  },
+  {
+    "id": "elevation",
+    "available": true,
+    "title": "Welcome Home - Elevation Church",
+    "url": "https://www.elevationchurch.org/",
+    "capturedAt": "2026-10-17T23:42:54.862Z",
+    "identityNote": null
+  },
+  {
+    "id": "saddleback",
+    "available": true,
+    "title": "Saddleback Church",
+    "url": "https://saddleback.com/es/",
+    "capturedAt": "2026-10-17T23:43:01.247Z",
+    "identityNote": null
+  },
+  {
+    "id": "hillsong",
+    "available": true,
+    "title": "Hillsong Church - Welcome Home | Church",
+    "url": "https://hillsong.com/",
+    "capturedAt": "2026-10-17T23:43:07.380Z",
+    "identityNote": null
+  },
+  {
+    "id": "bethel",
+    "available": true,
+    "title": "Bethel Church Redding, CA",
+    "url": "https://www.bethel.com/",
+    "capturedAt": "2026-10-17T23:43:14.097Z",
+    "identityNote": null
+  },
+  {
+    "id": "passion",
+    "available": true,
+    "title": "Passion City Church - For God. For people. For the city. For the world.",
+    "url": "https://passioncitychurch.com/",
+    "capturedAt": "2026-10-17T23:43:20.598Z",
+    "identityNote": null
+  },
+  {
+    "id": "ieb-cordoba",
+    "available": true,
+    "title": "Iglesia Bautista de Córdoba",
+    "url": "https://iebcordoba.es/",
+    "capturedAt": "2026-10-17T23:57:00.800Z",
+    "identityNote": "Referencia confirmada por el cliente: Córdoba, España. Sustituye el portal argentino localizado provisionalmente."
+  },
+  {
+    "id": "rey-jesus",
+    "available": true,
+    "title": "Iglesia El Rey Jesús | Bienvenidos a casa",
+    "url": "https://iglesiaelreyjesus.com.ar/",
+    "capturedAt": "2026-10-17T23:54:36.317Z",
+    "identityNote": "La portada identifica a Iglesia El Rey Jesús en José A. Cabrera 4656, Palermo. La denominación bautista de la lista original no se pudo confirmar."
+  },
+  {
+    "id": "adoracion",
+    "available": false,
+    "title": "iglesiaadoracion.org",
+    "url": "chrome-error://chromewebdata/",
+    "capturedAt": "2026-10-17T23:43:28.602Z",
+    "identityNote": null
+  },
+  {
+    "id": "centro-adoracion",
+    "available": true,
+    "title": "Iglesia Centro de Adoración",
+    "url": "https://iglesiacda-2023.my.canva.site/oficial",
+    "capturedAt": "2026-10-17T23:54:43.596Z",
+    "identityNote": "Sitio de Centro de Adoración · Ministerio Altares, Villa Sarmiento. El nombre genérico de la lista original no permite asegurar que fuera la congregación inicialmente pretendida."
+  },
+  {
+    "id": "rincon",
+    "available": true,
+    "title": "Inicio - Iglesia Rincón",
+    "url": "https://iglesiarincon.org/",
+    "capturedAt": "2026-10-17T23:43:37.546Z",
+    "identityNote": null
+  },
+  {
+    "id": "missio",
+    "available": true,
+    "title": "Iglesia Cristiana Missio",
+    "url": "https://www.iglesiacristianamissio.com/",
+    "capturedAt": "2026-10-17T23:43:44.497Z",
+    "identityNote": null
+  }
+]

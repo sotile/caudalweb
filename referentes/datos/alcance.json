@@ -1,0 +1,92 @@
+[
+  {
+    "id": "elevation",
+    "url": "https://www.youtube.com/@elevationchurch",
+    "title": "Elevation Church",
+    "verified": true,
+    "subscriberLabel": "3.85 M de suscriptores",
+    "observedAt": "2026-10-17T23:44:34.144420+00:00",
+    "scope": "Canal institucional enlazado desde la portada; no agrega música ni sedes."
+  },
+  {
+    "id": "bethel",
+    "url": "https://www.youtube.com/user/ibetheltv",
+    "title": "Bethel",
+    "verified": true,
+    "subscriberLabel": "573 k suscriptores",
+    "observedAt": "2026-10-17T23:44:34.125894+00:00",
+    "scope": "Canal institucional enlazado desde la portada; no agrega música ni sedes."
+  },
+  {
+    "id": "passion",
+    "url": "https://youtube.com/@passioncitychurch",
+    "title": "Passion City Church",
+    "verified": true,
+    "subscriberLabel": "260 k suscriptores",
+    "observedAt": "2026-10-17T23:44:34.173404+00:00",
+    "scope": "Canal institucional enlazado desde la portada; no agrega música ni sedes."
+  },
+  {
+    "id": "ieb-cordoba",
+    "verified": false,
+    "reason": "No se identificó un canal en la portada consultada."
+  },
+  {
+    "id": "rey-jesus",
+    "verified": false,
+    "reason": "No se identificó un canal en la portada consultada."
+  },
+  {
+    "id": "saddleback",
+    "url": "https://www.youtube.com/saddlebackchurch",
+    "verified": true,
+    "reason": "La respuesta no expuso los datos públicos del canal.",
+    "title": "Saddleback Church",
+    "subscriberLabel": "616 k suscriptores",
+    "observedAt": "2026-10-17T23:43:54.445457+00:00",
+    "scope": "Canal institucional enlazado desde la portada; sin suma de canales.",
+    "evidenceNote": "Lectura pública válida en la primera consulta de esta sesión; una segunda respuesta no expuso el encabezado del canal."
+  },
+  {
+    "id": "life",
+    "url": "https://www.youtube.com/user/LifeChurchtv",
+    "title": "Life.Church",
+    "verified": true,
+    "subscriberLabel": "1.13 M de suscriptores",
+    "observedAt": "2026-10-17T23:44:34.124257+00:00",
+    "scope": "Canal institucional enlazado desde la portada; no agrega música ni sedes."
+  },
+  {
+    "id": "missio",
+    "url": "https://www.youtube.com/@iglesiacristianamissiocord873/videos",
+    "title": "Iglesia Cristiana Missio Córdoba",
+    "verified": true,
+    "subscriberLabel": "816 suscriptores",
+    "observedAt": "2026-10-17T23:44:34.083042+00:00",
+    "scope": "Canal institucional enlazado desde la portada; no agrega música ni sedes."
+  },
+  {
+    "id": "adoracion",
+    "verified": false,
+    "reason": "No se identificó un canal en la portada consultada."
+  },
+  {
+    "id": "hillsong",
+    "url": "https://www.youtube.com/hillsong",
+    "title": "Hillsong Church",
+    "verified": true,
+    "subscriberLabel": "617 k suscriptores",
+    "observedAt": "2026-10-17T23:44:34.588639+00:00",
+    "scope": "Canal institucional enlazado desde la portada; no agrega música ni sedes."
+  },
+  {
+    "id": "rincon",
+    "verified": false,
+    "reason": "No se identificó un canal en la portada consultada."
+  },
+  {
+    "id": "centro-adoracion",
+    "verified": false,
+    "reason": "No se identificó un canal en la portada consultada."
+  }
+]

@@ -1,0 +1,488 @@
+{
+  "id": "bethel",
+  "name": "Bethel Church",
+  "region": "Mundo",
+  "url": "https://www.bethel.com/",
+  "capturedAt": "2026-10-17T23:43:14.097Z",
+  "viewport": {
+    "width": 1440,
+    "height": 1000
+  },
+  "available": true,
+  "navigationError": null,
+  "response": {
+    "status": 200,
+    "url": "https://www.bethel.com/"
+  },
+  "dismissal": null,
+  "title": "Bethel Church Redding, CA",
+  "text": "Church\nGet Involved\nEvents\nSchools\nResources\nTestimoniesGive\nExperience God's presence at church this Sunday.\nON EARTH AS IT IS IN HEAVEN\nJoin in PersonJoin Online\nBethel is a congregation rooted in the love of God, and dedicated to worldwide transformation through revival.\nEvery believer was created to belong to a community. It was never God’s heart for us to do this life alone.\n\nBethel is a congregation of worshippers of Jesus Christ in Redding, California, who long to see hearts ignited until heaven meets earth. We are on the edge of the greatest revival of all time. Get involved and join us as we pursue the personal, regional, and global expansion of God's kingdom through His manifest presence.\n\nChurch NewsEvent Calendar\nMINISTRIES\nThere's a place for you in what God is doing in our house.\nConnect With a Ministry\nEVENTS\nYoung Saints Conference\n\nCome experience the power of the Holy Spirit at Young Saints Conference 2026.\n\nOct 23, 2026-Oct 24, 2026\nView EventRegister Now\nEncounter Jesus\nDo you know Jesus? Do you need physical healing or ministry? \nGod wants to transform your life with His love and power.\nMeet Jesus\nReceive Prophetic Prayer\nReceive Prayer for Healing\nReceive Inner Healing & Counseling\nBETHEL MUSIC\nNew Album: We Must Respond\nListen Now\nSCHOOLS\nResourcing Every Generation\nFOR REVIVAL\nBETHEL CHRISTIAN SCHOOL\nBETHEL SCHOOL OF SUPERNATURAL MINISTRY\nView Schools\nFUTURE CAMPUS\nWe are building a new campus. Help bring heaven to earth and invest in the future.\nLearn More\nEMAIL NEWSLETTER\nStay Connected\nABOUT\n\nBethel's mission is revival—the personal, regional, and global expansion of God's kingdom through His manifest presence.\n\nCONNECT\nWeekends\nGet Involved\nCalendar\nFeatured Events\nSchools\nContact Us\nRESOURCES\nBethel Online\nBethel Music\nCounseling\nLeaders Network\nPodcasts\nStore\nMORE\nGive\nCareers\nNews\nPrivacy\nTerms\nInvesting\n\nSOCIAL\n\nFacebook\n\nInstagram\n\nTwitter\n\nLinkedIn\n\nYouTube\n\nApple Music\n\nSpotify\n© 2022 - 2026 Bethel.com. All Rights Reserved.\nUpdates from Bethel Leadership →",
+  "headings": [
+    "ON EARTH AS IT IS IN HEAVEN",
+    "Bethel is a congregation rooted in the love of God, and dedicated to worldwide transformation through revival.",
+    "Every believer was created to belong to a community. It was never God’s heart for us to do this life alone.",
+    "MINISTRIES",
+    "There's a place for you in what God is doing in our house.",
+    "Young Saints Conference",
+    "Young Saints Conference",
+    "Encounter Jesus",
+    "BETHEL MUSIC",
+    "New Album: We Must Respond",
+    "SCHOOLS",
+    "Resourcing Every Generation",
+    "FOR REVIVAL",
+    "Stay Connected"
+  ],
+  "links": [
+    {
+      "text": "",
+      "href": "https://www.bethel.com/"
+    },
+    {
+      "text": "Introduction",
+      "href": "https://www.bethel.com/about"
+    },
+    {
+      "text": "Beliefs",
+      "href": "https://www.bethel.com/beliefs"
+    },
+    {
+      "text": "Leadership",
+      "href": "https://www.bethel.com/#"
+    },
+    {
+      "text": "Testimonies",
+      "href": "https://www.bethel.com/#"
+    },
+    {
+      "text": "Bethel Music",
+      "href": "https://www.bethel.com/ministries/music"
+    },
+    {
+      "text": "Arise & Build",
+      "href": "https://www.bethel.com/#"
+    },
+    {
+      "text": "Contact Us",
+      "href": "https://www.bethel.com/#"
+    },
+    {
+      "text": "Weekends",
+      "href": "https://www.bethel.com/weekends"
+    },
+    {
+      "text": "Church News",
+      "href": "https://www.bethel.com/church-news"
+    },
+    {
+      "text": "Visit Us",
+      "href": "https://www.bethel.com/visit"
+    },
+    {
+      "text": "Bethel Online",
+      "href": "https://www.bethel.online/home"
+    },
+    {
+      "text": "About Bethel",
+      "href": "https://www.bethel.com/about"
+    },
+    {
+      "text": "Beliefs",
+      "href": "https://www.bethel.com/beliefs"
+    },
+    {
+      "text": "Leadership",
+      "href": "https://www.bethel.com/teams/senior-leadership"
+    },
+    {
+      "text": "Contact Us",
+      "href": "https://www.bethel.com/contact"
+    },
+    {
+      "text": "Arise & Build",
+      "href": "https://www.bethel.com/arise-and-build"
+    },
+    {
+      "text": "Ministries",
+      "href": "https://www.bethel.com/ministries"
+    },
+    {
+      "text": "Missions",
+      "href": "https://www.bethel.com/ministries/missions"
+    },
+    {
+      "text": "Kids",
+      "href": "https://www.bethel.com/ministries/kids"
+    },
+    {
+      "text": "Youth",
+      "href": "https://www.bethel.com/ministries/youth"
+    },
+    {
+      "text": "Young Adults",
+      "href": "https://www.bethel.com/ministries/tribe"
+    },
+    {
+      "text": "Men",
+      "href": "https://www.bethel.com/ministries-category/men"
+    },
+    {
+      "text": "Women",
+      "href": "https://www.bethel.com/ministries-category/women"
+    },
+    {
+      "text": "Seniors",
+      "href": "https://www.bethel.com/ministries/diamond-fellowship"
+    },
+    {
+      "text": "Home Groups",
+      "href": "https://www.bethel.com/groups"
+    },
+    {
+      "text": "Equip Classes",
+      "href": "https://www.bethel.com/classes"
+    },
+    {
+      "text": "Serve Opportunities",
+      "href": "https://www.bethel.com/serve"
+    },
+    {
+      "text": "Membership",
+      "href": "https://www.bethel.com/membership"
+    },
+    {
+      "text": "Calendar",
+      "href": "https://www.bethel.com/calendar"
+    },
+    {
+      "text": "Featured Events",
+      "href": "https://www.bethel.com/events"
+    },
+    {
+      "text": "Bethel Music Events",
+      "href": "https://bethelmusic.com/events"
+    },
+    {
+      "text": "Itineraries",
+      "href": "https://www.bethel.com/itineraries"
+    },
+    {
+      "text": "Bethel Christian School",
+      "href": "https://www.bethel.com/ministries/bethel-christian-school"
+    },
+    {
+      "text": "Bethel College: School of Technology",
+      "href": "https://www.bethel.com/news/important-update-about-bethel-college-closure"
+    },
+    {
+      "text": "Bethel School of Supernatural Ministry",
+      "href": "https://www.bethel.com/ministries/bethel-school-of-supernatural-ministry"
+    },
+    {
+      "text": "Bethel Online",
+      "href": "https://www.bethel.online/home"
+    },
+    {
+      "text": "Bethel Music",
+      "href": "https://www.bethel.com/ministries/bethel-music"
+    },
+    {
+      "text": "Counseling",
+      "href": "https://www.bethel.com/ministries/transformation-center"
+    },
+    {
+      "text": "Safe Church",
+      "href": "https://www.bethel.com/safechurch"
+    },
+    {
+      "text": "Leaders Network",
+      "href": "https://www.bethel.com/ministries/bethel-leaders-network"
+    },
+    {
+      "text": "Podcasts",
+      "href": "https://www.bethel.com/ministries/podcasts"
+    },
+    {
+      "text": "Store",
+      "href": "https://shop.bethel.com/"
+    },
+    {
+      "text": "Testimonies",
+      "href": "https://www.bethel.com/testimonies"
+    },
+    {
+      "text": "Give",
+      "href": "https://www.bethel.com/give"
+    },
+    {
+      "text": "",
+      "href": "https://www.bethel.com/#"
+    },
+    {
+      "text": "Join in Person",
+      "href": "https://www.bethel.com/weekends?utm_source=home"
+    },
+    {
+      "text": "Join Online",
+      "href": "https://www.bethel.online/home"
+    },
+    {
+      "text": "Church News",
+      "href": "https://www.bethel.com/church-news?utm_source=home"
+    },
+    {
+      "text": "Event Calendar",
+      "href": "https://www.bethel.com/calendar?utm_source=home"
+    },
+    {
+      "text": "Connect With a Ministry",
+      "href": "https://www.bethel.com/ministries?utm_source=home"
+    },
+    {
+      "text": "",
+      "href": "https://www.bethel.com/calendar/young-saints-conference-2026"
+    },
+    {
+      "text": "View Event",
+      "href": "https://www.bethel.com/calendar/young-saints-conference-2026"
+    },
+    {
+      "text": "Register Now",
+      "href": "http://www.bethel.com/calendar/young-saints-conference-2026#pricing-registration"
+    },
+    {
+      "text": "",
+      "href": "https://www.bethel.com/#"
+    },
+    {
+      "text": "View Event",
+      "href": "https://www.bethel.com/calendar/young-saints-conference-2026"
+    },
+    {
+      "text": "Register Now",
+      "href": "http://www.bethel.com/calendar/young-saints-conference-2026#pricing-registration"
+    },
+    {
+      "text": "Meet Jesus",
+      "href": "https://www.bethel.com/ministries/fresh-start"
+    },
+    {
+      "text": "Receive Prophetic Prayer",
+      "href": "https://www.bethel.com/ministries/prophetic?utm_source=home"
+    },
+    {
+      "text": "Receive Prayer for Healing",
+      "href": "https://www.bethel.com/ministries/healing-rooms?utm_source=home"
+    },
+    {
+      "text": "Receive Inner Healing & Counseling",
+      "href": "https://www.bethel.com/ministries/transformation-center?utm_source=home"
+    },
+    {
+      "text": "Listen Now",
+      "href": "https://bethelmusic.lnk.to/WeMustRespondBC"
+    },
+    {
+      "text": "View Schools",
+      "href": "https://www.bethel.com/ministries-category/schools?utm_source=home"
+    },
+    {
+      "text": "Learn More",
+      "href": "https://www.bethel.com/arise-and-build?utm_source=home"
+    },
+    {
+      "text": "Weekends",
+      "href": "https://www.bethel.com/weekends"
+    },
+    {
+      "text": "Get Involved",
+      "href": "https://www.bethel.com/get-involved"
+    },
+    {
+      "text": "Calendar",
+      "href": "https://www.bethel.com/calendar"
+    },
+    {
+      "text": "Featured Events",
+      "href": "https://www.bethel.com/events"
+    },
+    {
+      "text": "Schools",
+      "href": "https://www.bethel.com/ministries-category/schools"
+    },
+    {
+      "text": "Contact Us",
+      "href": "https://www.bethel.com/contact"
+    },
+    {
+      "text": "Bethel Online",
+      "href": "https://www.bethel.online/home"
+    },
+    {
+      "text": "Bethel Music",
+      "href": "https://www.bethel.com/ministries/bethel-music"
+    },
+    {
+      "text": "Counseling",
+      "href": "https://www.bethel.com/ministries/transformation-center"
+    },
+    {
+      "text": "Leaders Network",
+      "href": "https://www.bethel.com/ministries/bethel-leaders-network"
+    },
+    {
+      "text": "Podcasts",
+      "href": "https://www.bethel.com/ministries/podcasts"
+    },
+    {
+      "text": "Store",
+      "href": "https://shop.bethel.com/"
+    },
+    {
+      "text": "Give",
+      "href": "https://www.bethel.com/give"
+    },
+    {
+      "text": "Careers",
+      "href": "https://www.bethel.com/careers"
+    },
+    {
+      "text": "News",
+      "href": "https://www.bethel.com/news"
+    },
+    {
+      "text": "Privacy",
+      "href": "https://www.bethel.com/privacy"
+    },
+    {
+      "text": "Terms",
+      "href": "https://www.bethel.com/terms"
+    },
+    {
+      "text": "Investing",
+      "href": "https://www.bethel.com/investing"
+    },
+    {
+      "text": "\nFacebook",
+      "href": "https://www.facebook.com/bethel.church.redding"
+    },
+    {
+      "text": "\nInstagram",
+      "href": "https://www.instagram.com/bethel/"
+    },
+    {
+      "text": "\nTwitter",
+      "href": "https://twitter.com/BethelRedding"
+    },
+    {
+      "text": "\nLinkedIn",
+      "href": "https://www.linkedin.com/company/986767/"
+    },
+    {
+      "text": "\nYouTube",
+      "href": "https://www.youtube.com/user/ibetheltv"
+    },
+    {
+      "text": "\nApple Music",
+      "href": "https://music.apple.com/us/artist/bethel-music/480438107"
+    },
+    {
+      "text": "\nSpotify",
+      "href": "https://open.spotify.com/artist/26T4yOaOoFJvUvxR87Y9HO"
+    },
+    {
+      "text": "Weekends",
+      "href": "https://www.bethel.com/weekends"
+    },
+    {
+      "text": "Get Involved",
+      "href": "https://www.bethel.com/get-involved"
+    },
+    {
+      "text": "Calendar",
+      "href": "https://www.bethel.com/calendar"
+    },
+    {
+      "text": "Conferences",
+      "href": "https://www.bethel.com/events"
+    },
+    {
+      "text": "Schools",
+      "href": "https://www.bethel.com/#"
+    },
+    {
+      "text": "Contact Us",
+      "href": "https://www.bethel.com/#"
+    },
+    {
+      "text": "Bethel Music",
+      "href": "https://www.bethel.com/ministries/bethel-music"
+    },
+    {
+      "text": "Bethel.Tv",
+      "href": "https://www.bethel.tv/"
+    },
+    {
+      "text": "Podcast",
+      "href": "https://www.bethel.com/ministries/podcast"
+    },
+    {
+      "text": "Store",
+      "href": "https://shop.bethel.com/"
+    },
+    {
+      "text": "Careers",
+      "href": "https://www.bethel.com/careers"
+    },
+    {
+      "text": "Updates & Press",
+      "href": "https://www.bethel.com/news"
+    },
+    {
+      "text": "Privacy",
+      "href": "https://www.bethel.com/#"
+    },
+    {
+      "text": "Terms",
+      "href": "https://www.bethel.com/#"
+    },
+    {
+      "text": "Investing Policy& Disclaimer",
+      "href": "https://www.bethel.com/#"
+    },
+    {
+      "text": "Facebook",
+      "href": "https://www.facebook.com/bethel.church.redding"
+    },
+    {
+      "text": "Instagram",
+      "href": "https://instagram.com/bethel"
+    },
+    {
+      "text": "Twitter",
+      "href": "https://twitter.com/BethelRedding"
+    },
+    {
+      "text": "YouTube",
+      "href": "https://www.youtube.com/user/ibetheltv"
+    },
+    {
+      "text": "Apple Music",
+      "href": "https://www.bethel.com/#"
+    },
+    {
+      "text": "Spotify",
+      "href": "https://www.bethel.com/#"
+    },
+    {
+      "text": "Updates from Bethel Leadership →",
+      "href": "https://www.bethel.com/leadership-updates"
+    }
+  ],
+  "styles": {
+    "background": "rgb(0, 0, 0)",
+    "font": "Roboto, sans-serif",
+    "headingFont": "ivypresto-display, sans-serif"
+  },
+  "height": 8015
+}

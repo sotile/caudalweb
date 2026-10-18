@@ -1,0 +1,144 @@
+{
+  "id": "ieb-cordoba",
+  "name": "Iglesia Evangélica Bautista de Córdoba",
+  "region": "Mundo",
+  "url": "https://iebcordoba.es/",
+  "providedURL": "https://www.iebcordoba.org/",
+  "identityNote": "Referencia confirmada por el cliente: Córdoba, España. Sustituye el portal argentino localizado provisionalmente.",
+  "capturedAt": "2026-10-17T23:57:00.800Z",
+  "viewport": {
+    "width": 1440,
+    "height": 1000
+  },
+  "available": true,
+  "navigationError": null,
+  "response": {
+    "status": 200,
+    "url": "https://www.youtube.com/embed/GRc_RoN_izQ?enablejsapi=1&controls=0&modestbranding=1&showinfo=0&wmode=transparent&rel=0&autoplay=1&muted=1&html5=1&?VQ=HD720"
+  },
+  "dismissal": null,
+  "title": "Iglesia Bautista de Córdoba",
+  "text": "\t\nCONÓCENOS\n\t\nMENSAJES\n\t\nAGENDA\n\t\nNOTICIAS\n\t\nCONTACTO\n\t\n\t\n\nEN DIOS\nHAREMOS PROEZAS\n\nDomingos a las 11:00\n\nSABER MÁS\n\nÚLTIMOS MENSAJES\n\nAlgunos de los mensajes que se predican cada semana.\n\nVER MÁS\n\n\t\nNO ME AVERGÜENZO DEL EVANGELIO\nUNA IDENTIDAD, UNA MISIÓN\nMENSAJES\nAGENDA\nNOTICIAS\n\nNUESTRA MISIÓN:\n\nTransmitir Fielmente el Mensaje Poderoso del Evangelio.\n\nCONÓCENOS\n\nReunión principal: Domingo 11:00\nCalle Vicente Aleixandre, 4, 14004 Córdoba, España\nhola@iebcordoba.es\n\n   ",
+  "headings": [
+    "Menu",
+    "Home",
+    "NO ME AVERGÜENZO DEL EVANGELIO",
+    "UNA IDENTIDAD, UNA MISIÓN"
+  ],
+  "links": [
+    {
+      "text": "",
+      "href": "https://iebcordoba.es/"
+    },
+    {
+      "text": "Skip to content",
+      "href": "https://iebcordoba.es/#content"
+    },
+    {
+      "text": "CONÓCENOS",
+      "href": "https://iebcordoba.es/conocenos/"
+    },
+    {
+      "text": "MENSAJES",
+      "href": "https://iebcordoba.es/mensajes/"
+    },
+    {
+      "text": "AGENDA",
+      "href": "https://iebcordoba.es/agenda/"
+    },
+    {
+      "text": "NOTICIAS",
+      "href": "https://iebcordoba.es/noticias/"
+    },
+    {
+      "text": "CONTACTO",
+      "href": "https://iebcordoba.es/contacto/"
+    },
+    {
+      "text": "SABER MÁS",
+      "href": "https://iebcordoba.es/reunion-dominical"
+    },
+    {
+      "text": "VER MÁS",
+      "href": "https://iebcordoba.es/mensajes/#predicaciones"
+    },
+    {
+      "text": "",
+      "href": "https://iebcordoba.es/ctc-sermons/no-me-averguenzo-del-evangelio-2/"
+    },
+    {
+      "text": "NO ME AVERGÜENZO DEL EVANGELIO",
+      "href": "https://iebcordoba.es/ctc-sermons/no-me-averguenzo-del-evangelio-2/"
+    },
+    {
+      "text": "",
+      "href": "https://iebcordoba.es/ctc-sermons/una-identidad-una-mision/"
+    },
+    {
+      "text": "UNA IDENTIDAD, UNA MISIÓN",
+      "href": "https://iebcordoba.es/ctc-sermons/una-identidad-una-mision/"
+    },
+    {
+      "text": "MENSAJES",
+      "href": "https://iebcordoba.es/mensajes"
+    },
+    {
+      "text": "AGENDA",
+      "href": "https://iebcordoba.es/agenda"
+    },
+    {
+      "text": "NOTICIAS",
+      "href": "https://iebcordoba.es/noticias"
+    },
+    {
+      "text": "CONÓCENOS",
+      "href": "https://iebcordoba.es/conocenos"
+    },
+    {
+      "text": "Calle Vicente Aleixandre, 4, 14004 Córdoba, España",
+      "href": "https://goo.gl/maps/3J6rkUdKju62"
+    },
+    {
+      "text": "",
+      "href": "https://facebook.com/iebcordoba"
+    },
+    {
+      "text": "",
+      "href": "https://www.youtube.com/iebcordoba"
+    },
+    {
+      "text": "",
+      "href": "https://soundcloud.com/iebcordoba"
+    },
+    {
+      "text": "",
+      "href": "https://itunes.apple.com/es/podcast/id1067671038?mt=2&ls=1"
+    },
+    {
+      "text": "",
+      "href": "https://iebcordoba.es/conocenos/"
+    },
+    {
+      "text": "",
+      "href": "https://iebcordoba.es/mensajes/"
+    },
+    {
+      "text": "",
+      "href": "https://iebcordoba.es/agenda/"
+    },
+    {
+      "text": "",
+      "href": "https://iebcordoba.es/noticias/"
+    },
+    {
+      "text": "",
+      "href": "https://iebcordoba.es/contacto/"
+    }
+  ],
+  "styles": {
+    "background": "rgb(255, 255, 255)",
+    "font": "\"Knapstack Font 1\"",
+    "headingFont": "\"Knapstack Header Font\""
+  },
+  "height": 2288
+}

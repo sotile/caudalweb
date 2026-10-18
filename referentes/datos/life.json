@@ -1,0 +1,200 @@
+{
+  "id": "life",
+  "name": "Life.Church",
+  "region": "Mundo",
+  "url": "https://www.life.church/",
+  "capturedAt": "2026-10-17T23:42:47.905Z",
+  "viewport": {
+    "width": 1440,
+    "height": 1000
+  },
+  "available": true,
+  "navigationError": null,
+  "response": {
+    "status": 200,
+    "url": "https://login.life.church/authorize?client_id=1CJzvOGcCTK20Kxo4fPAXYW4hmDcH8zX&scope=openid+profile&audience=https%3A%2F%2Fproduct-apis.life.church&redirect_uri=https%3A%2F%2Fwww.life.church%2Fauth%2Fauth0%2Fcallback%2F&prompt=none&response_type=code&response_mode=web_message&state=WUI3aHNaRTh1NXF5VHBxWS5uR195NzY4MkFvM3BaeUFhcUNHVVUuMjFLLQ%3D%3D&nonce=azNTTHRzYXpzdWV6MTlCTzZ0RUNYVkRKWVJQWWlkclEyMDgtVURFT1JsWg%3D%3D&code_challenge=c6f5UxsxuF91edgK_TB2NMlJpOKX36lLPAeSdSnLAjo&code_challenge_method=S256&auth0Client=eyJuYW1lIjoiYXV0aDAtc3BhLWpzIiwidmVyc2lvbiI6IjIuMjguMiJ9"
+  },
+  "dismissal": null,
+  "title": "You’re Welcome Here",
+  "text": "Este sitio web utiliza tecnologías como cookies para habilitar la funcionalidad esencial del sitio, así como para analítica, personalización y publicidad dirigida. Para obtener más información, consulte el siguiente enlace: Política de privacidad\nATTEND ONLINE\nSTARTS SOON\nMEDIA\nLOCATIONS\nGIVE\nWHO WE ARE\nWORSHIP\nLOG IN\nMENU\nDon’t live near Life.Church?\nYou’re invited to Neighbor Week!\nFind Your Closest Location\nChoose a Location\nFort Smith\nRogers\nColorado Springs\nNorth Denver\nParker\nWellington\nWest Palm Beach\nDes Moines\nDerby\nEast Wichita\nLenexa\nOverland Park\nWest Wichita\nEast Kansas City\nNorthland\nSpringfield\nOmaha\nPapillion\nRio Rancho\nAlbany\nBroadway and Britton\nBroken Arrow\nCatoosa\nEdmond\nJenks\nMidtown Tulsa\nMidwest City\nMoore\nMustang\nNW Oklahoma City\nNorman\nOklahoma City\nOwasso\nShawnee\nSouth Broken Arrow\nSouth Oklahoma City\nSouth Tulsa\nStillwater\nYukon\nHendersonville\nAmarillo\nAustin\nFort Worth\nKeller\nMansfield\nMcKinney\nYou’re Welcome Here\n\nGod created you on purpose for a purpose. At Life.Church, we want to help you become the person He created you to be. This is a safe place where you can wrestle with questions and learn more about God.\n\nGet to Know Us\nLearn About LifeKids\nFind Your Next Step\nWhether you know exactly what God is calling you to do or need a little help knowing where He’s leading you, we’re here for you.\nAsk for Prayer\n\nWe’d love to pray with you.\n\nJoin a LifeGroup\n\nFind the people you can grow, laugh, and pray with.\n\nNew to Life.Church?\n\nTell us about yourself!\n\nNew to Life.Church?\n\nHere you’ll find a safe place to explore your beliefs and connect with others. Wherever you are in life, you’re welcome here.\n\nLearn More About Us\nAttend Life.Church Online\n\nGet free resources for your church through Life.Church Open Network.\n\nExplore Open Network\n\nAttend Life.Church Online or a Life.Church location.\n\nPrivacy Policy | Terms of Use | Vulnerability Disclosure Program | Cookie Preferences\n\n© 2026 Life.Church. All rights reserved.\n\nWatch\nLocations\nGive\nTools\nFor Churches\nCareers\nShop\nContact Us\nRelated Content:\nWhat Is Prayer? Plus the Best Example PrayersHow to Study the BibleDavid and Goliath Bible Story Explained",
+  "headings": [
+    "Don’t live near Life.Church?\nYou’re invited to Neighbor Week!",
+    "You’re Welcome Here",
+    "Ask for Prayer",
+    "Join a LifeGroup",
+    "New to Life.Church?",
+    "New to Life.Church?"
+  ],
+  "links": [
+    {
+      "text": "Política de privacidad",
+      "href": "https://www.life.church/privacy/"
+    },
+    {
+      "text": "",
+      "href": "https://www.osano.com/?utm_campaign=cmp&utm_source=cmp-dialog&utm_medium=banner"
+    },
+    {
+      "text": "",
+      "href": "https://www.life.church/?utm_source=life_church&utm_medium=header&utm_campaign=navigation"
+    },
+    {
+      "text": "ATTEND ONLINE\nSTARTS SOON",
+      "href": "https://live.life.church/?utm_source=life_church&utm_medium=header&utm_campaign=navigation"
+    },
+    {
+      "text": "MEDIA",
+      "href": "https://www.life.church/media/?utm_source=life_church&utm_medium=header&utm_campaign=navigation"
+    },
+    {
+      "text": "LOCATIONS",
+      "href": "https://www.life.church/locations/?utm_source=life_church&utm_medium=header&utm_campaign=navigation"
+    },
+    {
+      "text": "GIVE",
+      "href": "https://www.life.church/giving/?utm_source=life_church&utm_medium=header&utm_campaign=navigation"
+    },
+    {
+      "text": "WHO WE ARE",
+      "href": "https://www.life.church/who-we-are/?utm_source=life_church&utm_medium=header&utm_campaign=navigation"
+    },
+    {
+      "text": "WORSHIP",
+      "href": "https://www.life.church/worship/?utm_source=life_church&utm_medium=header&utm_campaign=navigation"
+    },
+    {
+      "text": "Neighbor Week",
+      "href": "https://www.life.church/neighborweek"
+    },
+    {
+      "text": "Find Your Closest Location",
+      "href": "https://www.life.church/#find-closest-location"
+    },
+    {
+      "text": "Get to Know Us",
+      "href": "https://www.life.church/who-we-are"
+    },
+    {
+      "text": "Learn About LifeKids",
+      "href": "https://www.life.church/kids"
+    },
+    {
+      "text": "",
+      "href": "https://life.church/nextsteps/prayer"
+    },
+    {
+      "text": "",
+      "href": "https://life.church/nextsteps/lifegroup"
+    },
+    {
+      "text": "",
+      "href": "https://life.church/nextsteps/new"
+    },
+    {
+      "text": "Learn More About Us",
+      "href": "https://www.life.church/who-we-are"
+    },
+    {
+      "text": "Attend Life.Church Online",
+      "href": "https://live.life.church/?utm_source=homepage_section&utm_medium=button&utm_campaign=LCO"
+    },
+    {
+      "text": "Explore Open Network",
+      "href": "https://open.life.church/"
+    },
+    {
+      "text": "Life.Church Online",
+      "href": "https://live.life.church/?utm_source=life_church&utm_medium=footer_info&utm_campaign=navigation"
+    },
+    {
+      "text": "Life.Church location",
+      "href": "https://www.life.church/locations/?utm_source=life_church&utm_medium=footer_info&utm_campaign=navigation"
+    },
+    {
+      "text": "Privacy Policy",
+      "href": "https://www.life.church/privacy/?utm_source=life_church&utm_medium=footer_info&utm_campaign=navigation"
+    },
+    {
+      "text": "Terms of Use",
+      "href": "https://www.life.church/terms/?utm_source=life_church&utm_medium=footer_info&utm_campaign=navigation"
+    },
+    {
+      "text": "Vulnerability Disclosure Program",
+      "href": "https://www.life.church/vulnerability-disclosure-program/?utm_source=life_church&utm_medium=footer_info&utm_campaign=navigation"
+    },
+    {
+      "text": "Cookie Preferences",
+      "href": "https://www.life.church/#"
+    },
+    {
+      "text": "Watch",
+      "href": "https://www.life.church/media/?utm_source=life_church&utm_medium=footer&utm_campaign=navigation"
+    },
+    {
+      "text": "Locations",
+      "href": "https://www.life.church/locations/?utm_source=life_church&utm_medium=footer&utm_campaign=navigation"
+    },
+    {
+      "text": "Give",
+      "href": "https://www.life.church/giving/?utm_source=life_church&utm_medium=footer&utm_campaign=navigation"
+    },
+    {
+      "text": "Tools",
+      "href": "https://www.life.church/tools/?utm_source=life_church&utm_medium=footer&utm_campaign=navigation"
+    },
+    {
+      "text": "For Churches",
+      "href": "https://www.life.church/churches/?utm_source=life_church&utm_medium=footer&utm_campaign=navigation"
+    },
+    {
+      "text": "Careers",
+      "href": "https://www.life.church/careers/?utm_source=life_church&utm_medium=footer&utm_campaign=navigation"
+    },
+    {
+      "text": "Shop",
+      "href": "https://shop.life.church/?utm_source=life_church&utm_medium=footer&utm_campaign=navigation"
+    },
+    {
+      "text": "Contact Us",
+      "href": "https://www.life.church/contact/?utm_source=life_church&utm_medium=footer&utm_campaign=navigation"
+    },
+    {
+      "text": "",
+      "href": "https://www.facebook.com/life.church?utm_source=life_church&utm_medium=footer_social&utm_campaign=navigation"
+    },
+    {
+      "text": "",
+      "href": "https://instagram.com/life.church?utm_source=life_church&utm_medium=footer_social&utm_campaign=navigation"
+    },
+    {
+      "text": "",
+      "href": "https://www.tiktok.com/@lifechurch?utm_source=life_church&utm_medium=footer_social&utm_campaign=navigation"
+    },
+    {
+      "text": "",
+      "href": "https://www.youtube.com/user/LifeChurchtv?utm_source=life_church&utm_medium=footer_social&utm_campaign=navigation"
+    },
+    {
+      "text": "",
+      "href": "https://www.linkedin.com/company/lifechurch/?utm_source=life_church&utm_medium=footer_social&utm_campaign=navigation"
+    },
+    {
+      "text": "What Is Prayer? Plus the Best Example Prayers",
+      "href": "https://finds.life.church/prayers-for-strength/"
+    },
+    {
+      "text": "How to Study the Bible",
+      "href": "https://finds.life.church/beginners-guide-to-studying-the-bible/"
+    },
+    {
+      "text": "David and Goliath Bible Story Explained",
+      "href": "https://finds.life.church/david-and-goliath-bible-story-explained/"
+    }
+  ],
+  "styles": {
+    "background": "rgb(255, 255, 255)",
+    "font": "proxima_nova, \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+    "headingFont": null
+  },
+  "height": 3195
+}

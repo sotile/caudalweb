@@ -1,0 +1,2069 @@
+<!doctype html>
+<html lang="es-AR" data-theme="dark">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Caudal de Vida · Presentación Interactiva (Propuestas, Referentes y Estrategia)</title>
+  <meta name="description" content="Presentación interactiva adaptable para Caudal de Vida: diagnóstico, 12 referentes, 6 propuestas estéticas interactivas, preguntas estratégicas y hoja de ruta.">
+  <link rel="icon" href="prototipos/assets/logo-social.jpg">
+  <style>
+    :root {
+      --bg: #0c171e;
+      --bg-card: rgba(227, 201, 149, 0.06);
+      --bg-card-hover: rgba(227, 201, 149, 0.12);
+      --border: rgba(227, 201, 149, 0.22);
+      --text: #f3f3eb;
+      --text-muted: #b7c2bf;
+      --accent: #e3c995;
+      --accent-glow: rgba(227, 201, 149, 0.16);
+      --gold: #e3c995;
+      --gold-glow: rgba(227, 201, 149, 0.16);
+      --green: #d5e2cf;
+      --font-sans: "Avenir Next", "Segoe UI", sans-serif;
+      --font-serif: Georgia, "Iowan Old Style", "Palatino Linotype", serif;
+      --radius-sm: 8px;
+      --radius-md: 14px;
+      --radius-lg: 20px;
+      --transition: all 0.28s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    [data-theme="light"] {
+      --bg: #f7f7f3;
+      --bg-card: #ffffff;
+      --bg-card-hover: #efeae0;
+      --border: #d9d2c5;
+      --text: #122c39;
+      --text-muted: #5c6b72;
+      --accent: #8d6230;
+      --accent-glow: rgba(141, 98, 48, 0.12);
+      --gold: #8d6230;
+      --gold-glow: rgba(141, 98, 48, 0.12);
+      --green: #2f5d4a;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: var(--font-sans);
+      background-color: var(--bg);
+      color: var(--text);
+      overflow: hidden;
+      height: 100vh;
+      width: 100vw;
+      user-select: none;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* TOP BAR / NAVIGATION DECK */
+    .deck-header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 60px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 24px;
+      z-index: 100;
+      background: var(--bg);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .deck-brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-weight: 700;
+      font-size: 0.95rem;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      color: var(--text);
+      text-decoration: none;
+    }
+
+    .deck-brand img {
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      object-fit: cover;
+    }
+
+    .deck-brand span span {
+      color: var(--accent);
+      margin-left: 4px;
+      font-weight: 400;
+    }
+
+    .deck-controls {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .btn-ctrl {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      color: var(--text);
+      padding: 7px 14px;
+      border-radius: 999px;
+      font-size: 0.82rem;
+      font-weight: 500;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      transition: var(--transition);
+      text-decoration: none;
+    }
+
+    .btn-ctrl:hover {
+      background: var(--bg-card-hover);
+      border-color: var(--accent);
+      color: var(--accent);
+      transform: translateY(-1px);
+    }
+
+    .btn-ctrl.active {
+      background: var(--accent);
+      color: #142532;
+      border-color: var(--accent);
+      font-weight: 600;
+    }
+
+    [data-theme="light"] .btn-ctrl.active {
+      color: #fff;
+    }
+
+    .slide-badge {
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--text-muted);
+      padding: 0 8px;
+      font-variant-numeric: tabular-nums;
+    }
+
+    /* SLIDES WRAPPER */
+    .deck-viewport {
+      width: 100vw;
+      height: 100vh;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .slide {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      padding: 80px 5vw 70px 5vw;
+      opacity: 0;
+      visibility: hidden;
+      transform: scale(0.96) translateX(40px);
+      transition: opacity 0.4s cubic-bezier(0.16, 1, 0.3, 1),
+                  transform 0.4s cubic-bezier(0.16, 1, 0.3, 1),
+                  visibility 0.4s;
+      overflow-y: auto;
+      overscroll-behavior: contain;
+    }
+
+    .slide.active {
+      opacity: 1;
+      visibility: visible;
+      transform: scale(1) translateX(0);
+      z-index: 10;
+    }
+
+    .slide.prev {
+      opacity: 0;
+      visibility: hidden;
+      transform: scale(0.96) translateX(-40px);
+    }
+
+    /* SLIDE LAYOUT CONTAINERS */
+    .slide-container {
+      width: 100%;
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+    }
+
+    .eyebrow-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 0.78rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      font-weight: 700;
+      color: var(--accent);
+      background: var(--accent-glow);
+      padding: 4px 12px;
+      border-radius: 999px;
+      width: fit-content;
+    }
+
+    .slide-title {
+      font-family: var(--font-serif);
+      font-size: clamp(2rem, 3.8vw, 3.2rem);
+      font-weight: 500;
+      line-height: 1.15;
+      letter-spacing: -0.02em;
+    }
+
+    .slide-title em {
+      font-style: italic;
+      color: var(--accent);
+    }
+
+    .slide-subtitle {
+      font-size: clamp(1rem, 1.4vw, 1.25rem);
+      color: var(--text-muted);
+      max-width: 780px;
+      line-height: 1.5;
+    }
+
+    /* BOTTOM CONTROLS & PROGRESS */
+    .deck-footer {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 60px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 24px;
+      z-index: 100;
+      background: linear-gradient(to top, var(--bg) 60%, transparent);
+      backdrop-filter: blur(8px);
+    }
+
+    .progress-bar-container {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 4px;
+      background: rgba(255, 255, 255, 0.08);
+      z-index: 105;
+    }
+
+    .progress-bar-fill {
+      height: 100%;
+      width: 0%;
+      background: linear-gradient(90deg, var(--accent), var(--gold));
+      transition: width 0.3s ease;
+    }
+
+    .nav-arrows {
+      display: flex;
+      gap: 8px;
+    }
+
+    .btn-arrow {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      color: var(--text);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.1rem;
+      cursor: pointer;
+      transition: var(--transition);
+    }
+
+    .btn-arrow:hover:not(:disabled) {
+      background: var(--accent);
+      color: #0b0f17;
+      border-color: var(--accent);
+      transform: scale(1.08);
+    }
+
+    .btn-arrow:disabled {
+      opacity: 0.3;
+      cursor: not-allowed;
+    }
+
+    .keyboard-hint {
+      font-size: 0.78rem;
+      color: var(--text-muted);
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+
+    kbd {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      padding: 2px 6px;
+      border-radius: 4px;
+      font-family: inherit;
+      font-size: 0.75rem;
+    }
+
+    /* SLIDE 1: HERO PORTADA */
+    .hero-slide {
+      text-align: center;
+      align-items: center;
+      position: relative;
+    }
+
+    .hero-banner-image {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      opacity: 0.18;
+      filter: saturate(1.2) contrast(1.1);
+      z-index: 1;
+      pointer-events: none;
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      max-width: 860px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 20px;
+    }
+
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 6px 16px;
+      border-radius: 999px;
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      font-size: 0.85rem;
+      font-weight: 600;
+      letter-spacing: 0.04em;
+    }
+
+    .hero-title {
+      font-family: var(--font-serif);
+      font-size: clamp(2.6rem, 5.5vw, 4.6rem);
+      font-weight: 500;
+      line-height: 1.08;
+      letter-spacing: -0.03em;
+    }
+
+    .hero-desc {
+      font-size: clamp(1.1rem, 1.8vw, 1.35rem);
+      color: var(--text-muted);
+      line-height: 1.5;
+      max-width: 680px;
+    }
+
+    .hero-meta-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+      width: 100%;
+      margin-top: 16px;
+    }
+
+    .hero-meta-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-md);
+      padding: 16px;
+      text-align: left;
+    }
+
+    .hero-meta-card strong {
+      display: block;
+      font-size: 1rem;
+      margin-bottom: 4px;
+      color: var(--accent);
+    }
+
+    .hero-meta-card p {
+      font-size: 0.84rem;
+      color: var(--text-muted);
+      line-height: 1.4;
+    }
+
+    /* SLIDE 2: DIAGNÓSTICO Y TRANSFORMACIÓN */
+    .pillars-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 16px;
+      width: 100%;
+    }
+
+    .pillar-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: 18px 16px;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      position: relative;
+      transition: var(--transition);
+    }
+
+    .pillar-card:hover {
+      border-color: var(--accent);
+      transform: translateY(-3px);
+      box-shadow: 0 12px 24px -8px var(--accent-glow);
+    }
+
+    .pillar-head {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      border-bottom: 1px solid var(--border);
+      padding-bottom: 10px;
+    }
+
+    .pillar-icon {
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.04em;
+      width: 34px;
+      height: 34px;
+      border-radius: 8px;
+      background: var(--bg-card-hover);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .pillar-title {
+      font-size: 0.98rem;
+      font-weight: 700;
+      color: var(--text);
+      line-height: 1.2;
+    }
+
+    .pillar-box {
+      border-radius: var(--radius-sm);
+      padding: 9px 11px;
+      display: flex;
+      flex-direction: column;
+      gap: 3px;
+      font-size: 0.82rem;
+      line-height: 1.35;
+    }
+
+    .pillar-box.before {
+      background: rgba(239, 68, 68, 0.08);
+      border: 1px solid rgba(239, 68, 68, 0.22);
+      color: var(--text-muted);
+    }
+
+    .pillar-box.before strong {
+      color: #f87171;
+      font-size: 0.74rem;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      display: flex;
+      align-items: center;
+      gap: 4px;
+    }
+
+    .pillar-box.after {
+      background: rgba(16, 185, 129, 0.08);
+      border: 1px solid rgba(16, 185, 129, 0.22);
+      color: var(--text);
+    }
+
+    .pillar-box.after strong {
+      color: var(--green);
+      font-size: 0.74rem;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      display: flex;
+      align-items: center;
+      gap: 4px;
+    }
+
+    .pillar-gain {
+      margin-top: auto;
+      font-size: 0.76rem;
+      font-weight: 600;
+      color: var(--accent);
+      background: var(--accent-glow);
+      padding: 5px 9px;
+      border-radius: 6px;
+      display: flex;
+      align-items: center;
+      gap: 5px;
+    }
+
+    .contrast-strip {
+      display: grid;
+      grid-template-columns: 1fr auto 1fr;
+      align-items: center;
+      gap: 16px;
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-md);
+      padding: 12px 20px;
+    }
+
+    .contrast-point {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-size: 0.86rem;
+      line-height: 1.35;
+    }
+
+    .contrast-badge-neg {
+      background: rgba(239, 68, 68, 0.15);
+      color: #f87171;
+      font-weight: 700;
+      font-size: 0.74rem;
+      padding: 3px 9px;
+      border-radius: 999px;
+      white-space: nowrap;
+    }
+
+    .contrast-badge-pos {
+      background: rgba(16, 185, 129, 0.15);
+      color: var(--green);
+      font-weight: 700;
+      font-size: 0.74rem;
+      padding: 3px 9px;
+      border-radius: 999px;
+      white-space: nowrap;
+    }
+
+    .contrast-arrow {
+      font-size: 1.1rem;
+      color: var(--text-muted);
+    }
+
+    /* SLIDE 3: REFERENTES */
+    .referentes-scroll {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 18px;
+      margin-top: 8px;
+    }
+
+    .referente-mini-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-md);
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      transition: var(--transition);
+      cursor: pointer;
+    }
+
+    .referente-mini-card:hover {
+      border-color: var(--accent);
+    }
+
+    .referente-mini-thumb {
+      height: 130px;
+      width: 100%;
+      object-fit: cover;
+      background: #1e293b;
+    }
+
+    .referente-mini-body {
+      padding: 14px;
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+      flex: 1;
+    }
+
+    .referente-mini-body h4 {
+      font-size: 0.98rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .referente-mini-body p {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      line-height: 1.35;
+    }
+
+    .referente-mini-tag {
+      font-size: 0.72rem;
+      font-weight: 600;
+      color: var(--gold);
+      background: var(--gold-glow);
+      padding: 2px 8px;
+      border-radius: 999px;
+      align-self: flex-start;
+      margin-top: auto;
+    }
+
+    /* SLIDE 4 & 5: PROTOTIPOS GRID & HIGHLIGHT */
+    .proposals-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+
+    .proposal-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-md);
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      position: relative;
+      transition: var(--transition);
+    }
+
+    .proposal-card:hover {
+      transform: translateY(-4px);
+      border-color: var(--accent);
+      box-shadow: 0 14px 28px -10px var(--accent-glow);
+    }
+
+    .proposal-card.featured {
+      border: 2px solid var(--accent);
+      box-shadow: 0 0 0 1px var(--accent), 0 12px 28px -6px var(--accent-glow);
+    }
+
+    .proposal-badge {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      background: var(--accent);
+      color: #0b0f17;
+      font-size: 0.72rem;
+      font-weight: 700;
+      padding: 3px 10px;
+      border-radius: 999px;
+      z-index: 5;
+    }
+
+    .proposal-thumb-wrap {
+      position: relative;
+      width: 100%;
+      height: 140px;
+      overflow: hidden;
+      background: #1e293b;
+    }
+
+    .proposal-thumb-wrap img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.4s ease;
+    }
+
+    .proposal-card:hover .proposal-thumb-wrap img {
+      transform: scale(1.05);
+    }
+
+    .proposal-body {
+      padding: 14px;
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+      flex: 1;
+    }
+
+    .proposal-body h4 {
+      font-size: 1rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .proposal-body p {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      line-height: 1.35;
+    }
+
+    .proposal-actions {
+      display: flex;
+      gap: 8px;
+      margin-top: 8px;
+    }
+
+    .btn-action {
+      flex: 1;
+      padding: 6px 10px;
+      border-radius: 6px;
+      font-size: 0.75rem;
+      font-weight: 600;
+      text-align: center;
+      text-decoration: none;
+      cursor: pointer;
+      border: 1px solid var(--border);
+      background: var(--bg-card);
+      color: var(--text);
+      transition: var(--transition);
+    }
+
+    .btn-action.primary {
+      background: var(--accent);
+      color: #0b0f17;
+      border-color: var(--accent);
+    }
+
+    .btn-action:hover {
+      filter: brightness(1.1);
+      transform: translateY(-1px);
+    }
+
+    /* SLIDE 5: EL ENCUENTRO DETALLE */
+    .spotlight-layout {
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 32px;
+      align-items: center;
+    }
+
+    .spotlight-preview-frame {
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      border: 1px solid var(--border);
+      box-shadow: 0 20px 40px -15px rgba(0, 0, 0, 0.5);
+      position: relative;
+      background: #000;
+      aspect-ratio: 16/10;
+    }
+
+    .spotlight-preview-frame img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .spotlight-details {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    .spotlight-features {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .spotlight-feat-item {
+      display: flex;
+      gap: 12px;
+      align-items: flex-start;
+      background: var(--bg-card);
+      padding: 12px 16px;
+      border-radius: var(--radius-md);
+      border: 1px solid var(--border);
+    }
+
+    .feat-icon {
+      font-size: 0.78rem;
+      font-weight: 700;
+      letter-spacing: 0.04em;
+      line-height: 1;
+      color: var(--accent);
+      padding-top: 4px;
+    }
+
+    .feat-text strong {
+      display: block;
+      font-size: 0.92rem;
+      margin-bottom: 2px;
+    }
+
+    .feat-text p {
+      font-size: 0.82rem;
+      color: var(--text-muted);
+      line-height: 1.35;
+    }
+
+    /* SLIDE 6: 4 PASOS */
+    .steps-display {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 16px;
+      margin-top: 10px;
+    }
+
+    .step-box {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-md);
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      position: relative;
+      transition: var(--transition);
+    }
+
+    .step-box:hover {
+      border-color: var(--accent);
+      transform: translateY(-3px);
+    }
+
+    .step-num {
+      font-family: var(--font-serif);
+      font-size: 1.8rem;
+      font-style: italic;
+      color: var(--accent);
+      line-height: 1;
+    }
+
+    .step-box h4 {
+      font-size: 1.05rem;
+    }
+
+    .step-box p {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      line-height: 1.4;
+    }
+
+    /* SLIDE 7: AUTOMATIZACIONES */
+    .auto-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+
+    .auto-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: 22px;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .auto-badge {
+      font-size: 0.72rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      padding: 3px 8px;
+      border-radius: 4px;
+      align-self: flex-start;
+    }
+
+    .auto-badge.launch { background: rgba(16, 185, 129, 0.2); color: var(--green); }
+    .auto-badge.phase2 { background: rgba(245, 158, 11, 0.2); color: var(--gold); }
+
+    .auto-card h4 {
+      font-size: 1.05rem;
+    }
+
+    .auto-card p {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      line-height: 1.45;
+    }
+
+    /* SLIDE 8: LAS 8 PREGUNTAS INTERACTIVAS */
+    .questions-interactive-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px;
+      max-height: 56vh;
+      overflow-y: auto;
+      padding-right: 6px;
+    }
+
+    .q-item {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-md);
+      padding: 14px 16px;
+      display: flex;
+      gap: 12px;
+      align-items: flex-start;
+      cursor: pointer;
+      transition: var(--transition);
+    }
+
+    .q-item:hover {
+      border-color: var(--accent);
+      background: var(--bg-card-hover);
+    }
+
+    .q-item.checked {
+      border-color: var(--green);
+      background: rgba(16, 185, 129, 0.08);
+    }
+
+    .q-check {
+      width: 22px;
+      height: 22px;
+      border-radius: 6px;
+      border: 2px solid var(--border);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      margin-top: 2px;
+      transition: var(--transition);
+      font-size: 0.8rem;
+      color: transparent;
+    }
+
+    .q-item.checked .q-check {
+      background: var(--green);
+      border-color: var(--green);
+      color: #fff;
+    }
+
+    .q-content strong {
+      display: block;
+      font-size: 0.92rem;
+      margin-bottom: 4px;
+    }
+
+    .q-content p {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      line-height: 1.35;
+    }
+
+    /* SLIDE 9: ROADMAP */
+    .roadmap-timeline {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 16px;
+      position: relative;
+      margin-top: 10px;
+    }
+
+    .roadmap-step {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-md);
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .roadmap-badge {
+      font-size: 0.75rem;
+      font-weight: 700;
+      color: var(--accent);
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+    }
+
+    .roadmap-step h4 {
+      font-size: 1.05rem;
+    }
+
+    .roadmap-step ul {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+
+    .roadmap-step li {
+      font-size: 0.82rem;
+      color: var(--text-muted);
+      line-height: 1.35;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .roadmap-step li::before {
+      content: "•";
+      color: var(--accent);
+    }
+
+    /* OVERVIEW GRID MODAL */
+    .overview-modal {
+      position: fixed;
+      inset: 0;
+      background: rgba(11, 15, 23, 0.94);
+      backdrop-filter: blur(12px);
+      z-index: 200;
+      display: flex;
+      flex-direction: column;
+      padding: 40px;
+      opacity: 0;
+      visibility: hidden;
+      transition: var(--transition);
+      overflow-y: auto;
+    }
+
+    .overview-modal.open {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    .overview-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 24px;
+    }
+
+    .overview-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 20px;
+    }
+
+    .overview-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-md);
+      padding: 16px;
+      cursor: pointer;
+      transition: var(--transition);
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .overview-card:hover {
+      border-color: var(--accent);
+      transform: scale(1.02);
+    }
+
+    .overview-card.current {
+      border: 2px solid var(--accent);
+      background: var(--accent-glow);
+    }
+
+    .overview-num {
+      font-size: 0.8rem;
+      font-weight: 700;
+      color: var(--accent);
+    }
+
+    .overview-title {
+      font-size: 0.95rem;
+      font-weight: 600;
+    }
+
+    /* IFRAME LIVE PREVIEW MODAL */
+    .preview-modal {
+      position: fixed;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.85);
+      backdrop-filter: blur(10px);
+      z-index: 300;
+      display: flex;
+      flex-direction: column;
+      opacity: 0;
+      visibility: hidden;
+      transition: var(--transition);
+    }
+
+    .preview-modal.open {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    .preview-modal-bar {
+      height: 52px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 20px;
+      background: #0f172a;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .preview-modal-iframe {
+      flex: 1;
+      width: 100%;
+      height: 100%;
+      border: none;
+      background: #fff;
+    }
+
+    /* RESPONSIVE BREAKPOINTS */
+    @media (max-width: 900px) {
+      .pillars-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+      .contrast-strip {
+        grid-template-columns: 1fr;
+        text-align: center;
+        gap: 8px;
+      }
+      .contrast-arrow {
+        transform: rotate(90deg);
+      }
+      .spotlight-layout, .questions-interactive-grid {
+        grid-template-columns: 1fr;
+      }
+      .proposals-grid, .steps-display, .auto-grid, .roadmap-timeline {
+        grid-template-columns: 1fr 1fr;
+      }
+      .hero-meta-grid {
+        grid-template-columns: 1fr;
+      }
+      .slide {
+        padding: 70px 20px 70px 20px;
+      }
+    }
+
+    @media (max-width: 600px) {
+      .pillars-grid {
+        grid-template-columns: 1fr;
+      }
+      .proposals-grid, .steps-display, .auto-grid, .roadmap-timeline {
+        grid-template-columns: 1fr;
+      }
+      .deck-brand span { display: none; }
+      .keyboard-hint { display: none; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- TOP DECK HEADER -->
+  <header class="deck-header">
+    <a href="#" class="deck-brand">
+      <img src="prototipos/assets/logo-social.jpg" alt="Caudal de Vida">
+      <span>Caudal<span>de Vida</span></span>
+    </a>
+
+    <div class="deck-controls">
+      <button class="btn-ctrl" id="btn-overview" title="Ver cuadrícula de diapositivas (G)">
+        <span aria-hidden="true">▦</span> Índice
+      </button>
+      <button class="btn-ctrl" id="btn-theme" title="Cambiar tema claro/oscuro (T)">
+        <span id="theme-icon">◐</span> <span id="theme-label">Claro</span>
+      </button>
+      <button class="btn-ctrl" id="btn-fullscreen" title="Pantalla completa (F)">
+        <span aria-hidden="true">⛶</span> Presentar
+      </button>
+      <div class="slide-badge" id="slide-indicator">01 / 09</div>
+    </div>
+  </header>
+
+  <!-- VIEWPORT SLIDES -->
+  <main class="deck-viewport" id="viewport">
+
+    <!-- SLIDE 1: PORTADA -->
+    <section class="slide hero-slide active" data-index="0">
+      <img src="prototipos/assets/1800x892-01.jpg" class="hero-banner-image" alt="Comunidad Caudal de Vida">
+      <div class="hero-content">
+        <div class="hero-badge">
+          <span>✳</span> Presentación de Proyecto Digital · Octubre 2026
+        </div>
+        <h1 class="hero-title">
+          Un hogar para muchos.<br><em>Un lugar para vos.</em>
+        </h1>
+        <p class="hero-desc">
+          Propuesta estratégica, dossier de referentes, prototipos navegables interactivos y hoja de ruta para la nueva web de la iglesia Caudal de Vida.
+        </p>
+        <div class="hero-meta-grid">
+          <div class="hero-meta-card">
+            <strong>12 Referentes</strong>
+            <p>Análisis de escala, buenas prácticas y prevención de sobrecarga operativa.</p>
+          </div>
+          <div class="hero-meta-card">
+            <strong>6 Prototipos Reales</strong>
+            <p>Completos en claro/oscuro, con video, menú móvil y datos locales.</p>
+          </div>
+          <div class="hero-meta-card">
+            <strong>8 Decisiones Clave</strong>
+            <p>Cuestionario sintetizado para alinear la reunión pastoral en 45 minutos.</p>
+          </div>
+        </div>
+        <div style="margin-top: 10px;">
+          <button class="btn-ctrl active" onclick="deck.next()" style="padding: 10px 24px; font-size: 0.95rem;">
+            Comenzar Presentación <span aria-hidden="true">→</span>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- SLIDE 2: DIAGNÓSTICO -->
+    <section class="slide" data-index="1">
+      <div class="slide-container" style="max-width: 1320px;">
+        <div style="display: flex; justify-content: space-between; align-items: flex-end; flex-wrap: wrap; gap: 12px;">
+          <div>
+            <span class="eyebrow-tag">01 · Diagnóstico y Oportunidad</span>
+            <h2 class="slide-title">De folleto estático a <em>hogar digital.</em></h2>
+            <p class="slide-subtitle">La web actual tiene el contenido, pero su orden genera fricción. Así transformamos los 4 puntos críticos:</p>
+          </div>
+          <a href="https://caudaldevida.net/" target="_blank" rel="noopener" class="btn-ctrl" style="font-size: 0.78rem;">
+            Ver web actual de Caudal ↗
+          </a>
+        </div>
+
+        <div class="pillars-grid">
+          <!-- Pilar 1 -->
+          <div class="pillar-card">
+            <div class="pillar-head">
+              <span class="pillar-icon">01</span>
+              <div class="pillar-title">Navegación & Menú</div>
+            </div>
+            <div class="pillar-box before">
+              <strong><span>✕</span> Web actual</strong>
+              Mezcla secciones fijas con actividades temporales (Retiros, Cursos). Confunde a quien busca información esencial.
+            </div>
+            <div class="pillar-box after">
+              <strong><span>✓</span> Nueva web</strong>
+              Cinco opciones estables (<i>Soy nuevo, Siguiente paso, Grupos, Eventos, Mensajes</i>) y el botón <b>Quiero visitar</b>. Los nombres de programas se explican en su página.
+            </div>
+            <div class="pillar-gain">
+              <span>01</span> Claridad: el menú no cambia con la agenda
+            </div>
+          </div>
+
+          <!-- Pilar 2 -->
+          <div class="pillar-card">
+            <div class="pillar-head">
+              <span class="pillar-icon">02</span>
+              <div class="pillar-title">Portada & Banner</div>
+            </div>
+            <div class="pillar-box before">
+              <strong><span>✕</span> Web actual</strong>
+              Funciona como flyer gigante: acumula texto y piezas gráficas sin guiar a una acción prioritaria.
+            </div>
+            <div class="pillar-box after">
+              <strong><span>✓</span> Nueva web</strong>
+              1 sola actividad protagonista vigente o bienvenida cálida de fin de semana con fecha y botón directo.
+            </div>
+            <div class="pillar-gain">
+              <span>02</span> Enfoque: 1 acción protagonista
+            </div>
+          </div>
+
+          <!-- Pilar 3 -->
+          <div class="pillar-card">
+            <div class="pillar-head">
+              <span class="pillar-icon">03</span>
+              <div class="pillar-title">Acompañamiento</div>
+            </div>
+            <div class="pillar-box before">
+              <strong><span>✕</span> Web actual</strong>
+              Grilla extensa ("Sé Parte") donde todos los ministerios terminan en el mismo WhatsApp sin filtro ni contexto.
+            </div>
+            <div class="pillar-box after">
+              <strong><span>✓</span> Nueva web</strong>
+              Recorridos guiados: páginas de Salvación, Integrar, Grupos y Voluntariado con ficha explicativa propia.
+            </div>
+            <div class="pillar-gain">
+              <span>03</span> Guía paso a paso antes de contactar
+            </div>
+          </div>
+
+          <!-- Pilar 4 -->
+          <div class="pillar-card">
+            <div class="pillar-head">
+              <span class="pillar-icon">04</span>
+              <div class="pillar-title">Inmediatez Práctica</div>
+            </div>
+            <div class="pillar-box before">
+              <strong><span>✕</span> Web actual</strong>
+              Horarios, ubicación, mapa, oración y donaciones enterrados al final de un scroll interminable.
+            </div>
+            <div class="pillar-box after">
+              <strong><span>✓</span> Nueva web</strong>
+              Barra de accesos rápidos arriba de todo: <i>Soy nuevo, Cómo llegar (Google Maps) y Último mensaje</i> en 3 segundos.
+            </div>
+            <div class="pillar-gain">
+              <span>04</span> Respuesta inmediata en el celular
+            </div>
+          </div>
+        </div>
+
+        <div class="contrast-strip">
+          <div class="contrast-point">
+            <span class="contrast-badge-neg">Modelo anterior</span>
+            <span>El visitante tiene que <b>investigar qué hacer</b> frente a un catálogo disperso.</span>
+          </div>
+          <div class="contrast-arrow" aria-hidden="true">➔</div>
+          <div class="contrast-point">
+            <span class="contrast-badge-pos">Nuevo enfoque</span>
+            <span>La persona se siente <b>recibida y acompañada</b> hacia su siguiente paso.</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SLIDE 3: REFERENTES -->
+    <section class="slide" data-index="2">
+      <div class="slide-container" style="max-width: 1400px;">
+        <div style="display: flex; justify-content: space-between; align-items: flex-end; flex-wrap: wrap; gap: 12px;">
+          <div>
+            <span class="eyebrow-tag">02 · Análisis de mercado</span>
+            <h2 class="slide-title">Aprendizajes de <em>doce referencias.</em></h2>
+            <p class="slide-subtitle">Cinco lecturas para Caudal. El dossier completo conserva las doce fichas, incluidas las que todavía no se pueden identificar.</p>
+          </div>
+          <a href="referentes/index.html" target="_blank" class="btn-ctrl">
+            Abrir Dossier Completo <span aria-hidden="true">↗</span>
+          </a>
+        </div>
+
+        <div class="referentes-scroll">
+          <div class="referente-mini-card" onclick="openPreview('referentes/index.html#elevation')">
+            <img src="referentes/capturas/elevation-desktop.jpg" class="referente-mini-thumb" alt="Elevation">
+            <div class="referente-mini-body">
+              <h4>Elevation Church <span aria-hidden="true">↗</span></h4>
+              <p><b>Qué tomar:</b> El último mensaje como puerta de entrada a la vida de la iglesia y biblioteca organizada por series.</p>
+              <span class="referente-mini-tag">Contenido + Video</span>
+            </div>
+          </div>
+
+          <div class="referente-mini-card" onclick="openPreview('referentes/index.html#saddleback')">
+            <img src="referentes/capturas/saddleback-desktop.jpg" class="referente-mini-thumb" alt="Saddleback">
+            <div class="referente-mini-body">
+              <h4>Saddleback <span aria-hidden="true">↗</span></h4>
+              <p><b>Qué tomar:</b> Navegación por verbos y necesidades humanas: "Quiero conocer a Jesús", "Quiero bautizarme", "Servir".</p>
+              <span class="referente-mini-tag">Siguiente Paso</span>
+            </div>
+          </div>
+
+          <div class="referente-mini-card" onclick="openPreview('referentes/index.html#ieb-cordoba')">
+            <img src="referentes/capturas/ieb-cordoba-desktop.jpg" class="referente-mini-thumb" alt="IEB Córdoba">
+            <div class="referente-mini-body">
+              <h4>IEB Córdoba (España) <span aria-hidden="true">↗</span></h4>
+              <p><b>Qué tomar:</b> Horario de reunión inmediatamente visible en el primer bloque y balance con vida semanal.</p>
+              <span class="referente-mini-tag">Inmediatez</span>
+            </div>
+          </div>
+
+          <div class="referente-mini-card" onclick="openPreview('referentes/index.html#rey-jesus')">
+            <img src="referentes/capturas/rey-jesus-desktop.jpg" class="referente-mini-thumb" alt="El Rey Jesús">
+            <div class="referente-mini-body">
+              <h4>El Rey Jesús <span aria-hidden="true">↗</span></h4>
+              <p><b>Qué tomar:</b> Horarios y bienvenida como primeras acciones. Es el par local más claro para una iglesia de barrio.</p>
+              <span class="referente-mini-tag">Primera visita</span>
+            </div>
+          </div>
+
+          <div class="referente-mini-card" onclick="openPreview('referentes/index.html#missio')">
+            <img src="referentes/capturas/missio-desktop.jpg" class="referente-mini-thumb" alt="Missio Córdoba">
+            <div class="referente-mini-body">
+              <h4>Missio (Argentina) <span aria-hidden="true">↗</span></h4>
+              <p><b>Qué tomar:</b> Reutilizar plataformas ya existentes (YouTube, Spotify) en lugar de duplicar esfuerzos de subida.</p>
+              <span class="referente-mini-tag">Eficiencia</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SLIDE 4: LAS 6 PROPUESTAS -->
+    <section class="slide" data-index="3">
+      <div class="slide-container">
+        <div style="display: flex; justify-content: space-between; align-items: flex-end; flex-wrap: wrap; gap: 12px;">
+          <div>
+            <span class="eyebrow-tag">03 · Exploración visual</span>
+            <h2 class="slide-title">Seis direcciones. <em>Una misma iglesia.</em></h2>
+            <p class="slide-subtitle">Prototipos navegables completos con modo claro/oscuro, diálogo de video oficial y adaptabilidad móvil.</p>
+          </div>
+          <a href="prototipos/index.html" target="_blank" class="btn-ctrl">
+            Ver Galería de Prototipos <span aria-hidden="true">↗</span>
+          </a>
+        </div>
+
+        <div class="proposals-grid">
+          <!-- 01 -->
+          <div class="proposal-card">
+            <div class="proposal-thumb-wrap">
+              <img src="prototipos/previews/01-casa-abierta-light.jpg" alt="Casa abierta">
+            </div>
+            <div class="proposal-body">
+              <h4>01 · Casa abierta</h4>
+              <p>Editorial cálida, retratos rectangulares, crema y bordó.</p>
+              <div class="proposal-actions">
+                <button class="btn-action primary" onclick="openPreview('prototipos/01-casa-abierta.html')">Ver Demo</button>
+                <a href="prototipos/01-casa-abierta.html" target="_blank" class="btn-action">Abrir ↗</a>
+              </div>
+            </div>
+          </div>
+
+          <!-- 02 FEATURED -->
+          <div class="proposal-card featured">
+            <span class="proposal-badge">Dirección Principal</span>
+            <div class="proposal-thumb-wrap">
+              <img src="prototipos/previews/02-el-encuentro-dark.jpg?v=20261018" alt="El encuentro">
+            </div>
+            <div class="proposal-body">
+              <h4>02 · El encuentro</h4>
+              <p>Reunión y retrato, azul y arena, una sola invitación a visitar.</p>
+              <div class="proposal-actions">
+                <button class="btn-action primary" onclick="openPreview('prototipos/02-el-encuentro.html')">Ver Demo</button>
+                <a href="prototipos/02-el-encuentro.html" target="_blank" class="btn-action">Abrir ↗</a>
+              </div>
+            </div>
+          </div>
+
+          <!-- 03 -->
+          <div class="proposal-card">
+            <div class="proposal-thumb-wrap">
+              <img src="prototipos/previews/03-vida-para-la-ciudad-light.jpg" alt="Vida para la Ciudad">
+            </div>
+            <div class="proposal-body">
+              <h4>03 · Vida para la Ciudad</h4>
+              <p>Retícula editorial urbana y protagonismo de la misión.</p>
+              <div class="proposal-actions">
+                <button class="btn-action primary" onclick="openPreview('prototipos/03-vida-para-la-ciudad.html')">Ver Demo</button>
+                <a href="prototipos/03-vida-para-la-ciudad.html" target="_blank" class="btn-action">Abrir ↗</a>
+              </div>
+            </div>
+          </div>
+
+          <!-- 04 -->
+          <div class="proposal-card">
+            <div class="proposal-thumb-wrap">
+              <img src="prototipos/previews/04-tu-siguiente-paso-light.jpg" alt="Tu siguiente paso">
+            </div>
+            <div class="proposal-body">
+              <h4>04 · Tu siguiente paso</h4>
+              <p>Señalética y recorridos claros por los 4 ejes de la misión.</p>
+              <div class="proposal-actions">
+                <button class="btn-action primary" onclick="openPreview('prototipos/04-tu-siguiente-paso.html')">Ver Demo</button>
+                <a href="prototipos/04-tu-siguiente-paso.html" target="_blank" class="btn-action">Abrir ↗</a>
+              </div>
+            </div>
+          </div>
+
+          <!-- 05 -->
+          <div class="proposal-card">
+            <div class="proposal-thumb-wrap">
+              <img src="prototipos/previews/05-esta-semana-light.jpg" alt="Esta semana">
+            </div>
+            <div class="proposal-body">
+              <h4>05 · Esta semana</h4>
+              <p>Portada modular de actualidad, mensajes y agenda.</p>
+              <div class="proposal-actions">
+                <button class="btn-action primary" onclick="openPreview('prototipos/05-esta-semana.html')">Ver Demo</button>
+                <a href="prototipos/05-esta-semana.html" target="_blank" class="btn-action">Abrir ↗</a>
+              </div>
+            </div>
+          </div>
+
+          <!-- 06 -->
+          <div class="proposal-card">
+            <span class="proposal-badge" style="background: var(--gold);">Experimental</span>
+            <div class="proposal-thumb-wrap">
+              <img src="prototipos/previews/06-un-lugar-para-vos-light.jpg" alt="Un lugar para vos">
+            </div>
+            <div class="proposal-body">
+              <h4>06 · Un lugar para vos</h4>
+              <p>Scroll narrativo continuo en 3 capítulos y tipografía de gran escala.</p>
+              <div class="proposal-actions">
+                <button class="btn-action primary" onclick="openPreview('prototipos/06-un-lugar-para-vos.html')">Ver Demo</button>
+                <a href="prototipos/06-un-lugar-para-vos.html" target="_blank" class="btn-action">Abrir ↗</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SLIDE 5: SPOTLIGHT PROPUESTA 02 -->
+    <section class="slide" data-index="4">
+      <div class="slide-container">
+        <div>
+          <span class="eyebrow-tag">04 · Dirección recomendada</span>
+          <h2 class="slide-title">Propuesta 02 · <em>El encuentro</em></h2>
+          <p class="slide-subtitle">La dirección que proponemos, a partir de lo que ya marcaron: la escena de la reunión, la frase de casa y una sola invitación a visitar.</p>
+        </div>
+
+        <div class="spotlight-layout">
+          <div class="spotlight-preview-frame">
+            <img src="prototipos/previews/02-el-encuentro-dark.jpg?v=20261018" alt="Preview El Encuentro">
+          </div>
+
+          <div class="spotlight-details">
+            <div class="spotlight-features">
+              <div class="spotlight-feat-item">
+                <span class="feat-icon">01</span>
+                <div class="feat-text">
+                  <strong>Un hogar para muchos</strong>
+                  <p>El titular de Caudal va sobre la foto de la reunión, con un retrato de bienvenida al lado.</p>
+                </div>
+              </div>
+
+              <div class="spotlight-feat-item">
+                <span class="feat-icon">02</span>
+                <div class="feat-text">
+                  <strong>Una sola invitación</strong>
+                  <p>El botón del héroe es Quiero visitar Caudal. El mensaje de la semana baja a la grilla, junto con la visita y los grupos.</p>
+                </div>
+              </div>
+
+              <div class="spotlight-feat-item">
+                <span class="feat-icon">03</span>
+                <div class="feat-text">
+                  <strong>Familia y siguiente paso, más arriba</strong>
+                  <p>Kids, PreA y Cultura Jóvenes aparecen antes que la biblioteca. El recorrido de cuatro pasos queda a la vista sin convertir la portada en un trámite.</p>
+                </div>
+              </div>
+            </div>
+
+            <div style="display: flex; gap: 12px; margin-top: 6px;">
+              <button class="btn-ctrl active" onclick="openPreview('prototipos/02-el-encuentro.html')" style="padding: 10px 18px;">
+                Probar El encuentro <span aria-hidden="true">↗</span>
+              </button>
+              <a href="prototipos/02-el-encuentro.html?theme=light" target="_blank" class="btn-ctrl">
+                Ver en modo claro ↗
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SLIDE 6: ARQUITECTURA SIGUIENTE PASO -->
+    <section class="slide" data-index="5">
+      <div class="slide-container">
+        <div>
+          <span class="eyebrow-tag">05 · Recorrido del visitante</span>
+          <h2 class="slide-title">Un camino claro para <em>cada persona.</em></h2>
+          <p class="slide-subtitle">Traducimos el proceso interno de la iglesia en 4 acciones comprensibles para alguien que se acerca por primera vez.</p>
+        </div>
+
+        <div class="steps-display">
+          <div class="step-box">
+            <span class="step-num">01</span>
+            <h4>Conocer a Dios</h4>
+            <p>Todo comienza con Jesús. Una página cálida de salvación y oración, sin tecnicismos teológicos complejos.</p>
+          </div>
+
+          <div class="step-box">
+            <span class="step-num">02</span>
+            <h4>Encontrar libertad</h4>
+            <p>Los <b>Grupos Caudal</b> como espacio para hacer amigos, construir relaciones y caminar acompañados en la fe.</p>
+          </div>
+
+          <div class="step-box">
+            <span class="step-num">03</span>
+            <h4>Descubrir propósito</h4>
+            <p>El programa <b>Integrar</b> y los espacios de formación (Fundamental, Sanar) con fechas claras de inscripción.</p>
+          </div>
+
+          <div class="step-box">
+            <span class="step-num">04</span>
+            <h4>Hacer la diferencia</h4>
+            <p>Oportunidades concretas de servicio en la iglesia y participación activa en <b>Misiones Caudal</b> en la ciudad.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SLIDE 7: AUTOMATIZACIONES -->
+    <section class="slide" data-index="6">
+      <div class="slide-container">
+        <div>
+          <span class="eyebrow-tag">06 · Eficiencia operativa</span>
+          <h2 class="slide-title">Contenido vivo <em>sin sobrecarga de trabajo.</em></h2>
+          <p class="slide-subtitle">La playlist MENSAJES alimenta la biblioteca cuando el equipo publica en YouTube. Un editor sigue eligiendo el destacado. El sitio se republica en pocos minutos.</p>
+        </div>
+
+        <div class="auto-grid">
+          <div class="auto-card">
+            <span class="auto-badge launch">Lanzamiento</span>
+            <h4>Prédicas automáticas desde YouTube</h4>
+            <p>El sitio lee la playlist oficial <code>MENSAJES</code>. Cada vez que el equipo sube la reunión del domingo, la web actualiza la portada y la biblioteca automáticamente sin tocar código.</p>
+          </div>
+
+          <div class="auto-card">
+            <span class="auto-badge launch">Lanzamiento</span>
+            <h4>Series temáticas (Día a Día)</h4>
+            <p>Sincronización de las temporadas de <i>Día a Día</i> con Alejandra Genobar y la lista de reproducción musical, organizadas por episodios.</p>
+          </div>
+
+          <div class="auto-card">
+            <span class="auto-badge launch">Lanzamiento</span>
+            <h4>Tres reels elegidos a mano</h4>
+            <p>En el lanzamiento se publican tres piezas de Instagram que elige el equipo. Conectar la cuenta y usar Google Calendar queda para una etapa posterior.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SLIDE 8: 8 PREGUNTAS ESTRATÉGICAS (INTERACTIVAS) -->
+    <section class="slide" data-index="7">
+      <div class="slide-container">
+        <div style="display: flex; justify-content: space-between; align-items: flex-end; flex-wrap: wrap; gap: 10px;">
+          <div>
+            <span class="eyebrow-tag">07 · Reunión de definición</span>
+            <h2 class="slide-title">Las 8 preguntas <em>para cerrar el alcance.</em></h2>
+            <p class="slide-subtitle">Sintetizamos el cuestionario para tomar las decisiones centrales en una reunión de 45 minutos (hacé clic para marcar acuerdos):</p>
+          </div>
+          <button class="btn-ctrl" onclick="clearQuestions()">Limpiar marcas</button>
+        </div>
+
+        <div class="questions-interactive-grid" id="questions-grid">
+          <div class="q-item" onclick="toggleQuestion(this)">
+            <div class="q-check">✓</div>
+            <div class="q-content">
+              <strong>1. Prioridad nº 1</strong>
+              <p>¿Qué resultado debe generar primero la web: primeras visitas, conexión a Grupos Caudal o difusión de prédicas?</p>
+            </div>
+          </div>
+
+          <div class="q-item" onclick="toggleQuestion(this)">
+            <div class="q-check">✓</div>
+            <div class="q-content">
+              <strong>2. Validación estética de "El encuentro (02)"</strong>
+              <p>¿Confirmamos esta dirección visual cinematográfica y comunitaria para el desarrollo definitivo?</p>
+            </div>
+          </div>
+
+          <div class="q-item" onclick="toggleQuestion(this)">
+            <div class="q-check">✓</div>
+            <div class="q-content">
+              <strong>3. Aprobación pastoral única</strong>
+              <p>¿Quién tendrá la última palabra para aprobar textos doctrinales y consolidar las devoluciones del equipo?</p>
+            </div>
+          </div>
+
+          <div class="q-item" onclick="toggleQuestion(this)">
+            <div class="q-check">✓</div>
+            <div class="q-content">
+              <strong>4. Circuito de "Soy Nuevo"</strong>
+              <p>¿Cómo se recibe en la práctica a quien avisa que visita Caudal por primera vez para armar el FAQ?</p>
+            </div>
+          </div>
+
+          <div class="q-item" onclick="toggleQuestion(this)">
+            <div class="q-check">✓</div>
+            <div class="q-content">
+              <strong>5. Delimitación con Instituto Cultura</strong>
+              <p>¿Cultura Jóvenes se presenta en la web principal e Instituto Cultura funciona como link derivado independiente?</p>
+            </div>
+          </div>
+
+          <div class="q-item" onclick="toggleQuestion(this)">
+            <div class="q-check">✓</div>
+            <div class="q-content">
+              <strong>6. Fuente oficial de videos</strong>
+              <p>¿Ratificamos la playlist de YouTube como fuente y postergamos podcast en Spotify para fase 2?</p>
+            </div>
+          </div>
+
+          <div class="q-item" onclick="toggleQuestion(this)">
+            <div class="q-check">✓</div>
+            <div class="q-content">
+              <strong>7. Fecha de lanzamiento</strong>
+              <p>¿Existe algún hito en el calendario (conferencia, serie o aniversario) para fijar el día de publicación?</p>
+            </div>
+          </div>
+
+          <div class="q-item" onclick="toggleQuestion(this)">
+            <div class="q-check">✓</div>
+            <div class="q-content">
+              <strong>8. Hosting y administración de dominio</strong>
+              <p>¿Quién administra caudaldevida.net y qué presupuesto se contempla para el alojamiento estático?</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SLIDE 9: HOJA DE RUTA -->
+    <section class="slide" data-index="8">
+      <div class="slide-container">
+        <div>
+          <span class="eyebrow-tag">08 · Plan de acción</span>
+          <h2 class="slide-title">Hoja de ruta <em>hacia el lanzamiento.</em></h2>
+          <p class="slide-subtitle">Seis a ocho semanas desde que llegan horarios, logo y fotos. El desarrollo no arranca con esos materiales pendientes.</p>
+        </div>
+
+        <div class="roadmap-timeline">
+          <div class="roadmap-step">
+            <span class="roadmap-badge">Paso 1</span>
+            <h4>Ficha de datos (Offline)</h4>
+            <ul>
+              <li>Horarios vigentes de sábado y domingo.</li>
+              <li>Logo en vector y texto de visión firmado.</li>
+              <li>Fotos de bienvenida, grupos y familias.</li>
+              <li>WhatsApp, grupos activos y un interlocutor pastoral.</li>
+            </ul>
+          </div>
+
+          <div class="roadmap-step">
+            <span class="roadmap-badge">Paso 2</span>
+            <h4>Desarrollo en Astro</h4>
+            <ul>
+              <li>Sitio estático a partir de El encuentro revisado.</li>
+              <li>Misma navegación en celular y escritorio.</li>
+              <li>Textos pastorales aprobados antes de publicar.</li>
+              <li>Accesible con teclado y con movimiento reducido.</li>
+            </ul>
+          </div>
+
+          <div class="roadmap-step">
+            <span class="roadmap-badge">Paso 3</span>
+            <h4>CMS + YouTube</h4>
+            <ul>
+              <li>Panel Sanity Studio liviano para eventos.</li>
+              <li>Importador programado de YouTube.</li>
+              <li>Entorno de preview protegido.</li>
+              <li>Control editorial de portada.</li>
+            </ul>
+          </div>
+
+          <div class="roadmap-step">
+            <span class="roadmap-badge">Paso 4</span>
+            <h4>Lanzamiento</h4>
+            <ul>
+              <li>Aprobación del preview pastoral.</li>
+              <li>DNS de caudaldevida.net con el responsable del dominio.</li>
+              <li>Sesión de práctica con quien va a editar.</li>
+              <li>Publicación y comprobación de formularios.</li>
+            </ul>
+          </div>
+        </div>
+
+        <div style="margin-top: 10px; display: flex; gap: 14px; align-items: center; justify-content: space-between; flex-wrap: wrap;">
+          <p style="font-size: 0.9rem; color: var(--text-muted);">
+            Proyecto: <b>Caudal de Vida</b> · San Miguel, Buenos Aires
+          </p>
+          <div style="display: flex; gap: 10px;">
+            <a href="docs/preguntas-para-el-cliente.md" class="btn-ctrl">
+              Ver Ficha de Preguntas ↗
+            </a>
+            <button class="btn-ctrl active" onclick="deck.goTo(0)">
+              Reiniciar Presentación ↺
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- BOTTOM FOOTER -->
+  <footer class="deck-footer">
+    <div class="keyboard-hint">
+      <span>Navegar con <kbd>←</kbd> <kbd>→</kbd> o <kbd>Espacio</kbd></span>
+      <span><kbd>G</kbd> Índice</span>
+      <span><kbd>F</kbd> Pantalla completa</span>
+      <span><kbd>T</kbd> Tema</span>
+    </div>
+
+    <div class="nav-arrows">
+      <button class="btn-arrow" id="btn-prev" title="Anterior (←)" aria-label="Diapositiva anterior">←</button>
+      <button class="btn-arrow" id="btn-next" title="Siguiente (→)" aria-label="Diapositiva siguiente">→</button>
+    </div>
+  </footer>
+
+  <!-- PROGRESS BAR -->
+  <div class="progress-bar-container">
+    <div class="progress-bar-fill" id="progress-bar"></div>
+  </div>
+
+  <!-- OVERVIEW GRID MODAL -->
+  <div class="overview-modal" id="overview-modal" aria-hidden="true">
+    <div class="overview-header">
+      <h3 style="font-family: var(--font-serif); font-size: 1.6rem;">Índice de Diapositivas</h3>
+      <button class="btn-ctrl" onclick="toggleOverview()">Cerrar (Esc)</button>
+    </div>
+    <div class="overview-grid" id="overview-grid">
+      <!-- Populated via JS -->
+    </div>
+  </div>
+
+  <!-- LIVE PREVIEW MODAL (IFRAME) -->
+  <div class="preview-modal" id="preview-modal" aria-hidden="true">
+    <div class="preview-modal-bar">
+      <span style="font-weight: 600; font-size: 0.9rem; color: #f8fafc;" id="preview-title">Vista previa en vivo</span>
+      <div style="display: flex; gap: 10px; align-items: center;">
+        <a id="preview-external-link" href="#" target="_blank" class="btn-ctrl" style="font-size: 0.75rem;">Abrir en pestaña nueva ↗</a>
+        <button class="btn-ctrl" onclick="closePreview()">✕ Cerrar (Esc)</button>
+      </div>
+    </div>
+    <iframe class="preview-modal-iframe" id="preview-iframe" src="about:blank"></iframe>
+  </div>
+
+  <script>
+    // DECK CONTROLLER
+    class PresentationDeck {
+      constructor() {
+        this.slides = Array.from(document.querySelectorAll('.slide'));
+        this.current = 0;
+        this.total = this.slides.length;
+        this.progressBar = document.getElementById('progress-bar');
+        this.indicator = document.getElementById('slide-indicator');
+        this.btnPrev = document.getElementById('btn-prev');
+        this.btnNext = document.getElementById('btn-next');
+
+        this.init();
+      }
+
+      init() {
+        // Read hash or default to 0
+        const hash = window.location.hash;
+        if (hash && hash.startsWith('#slide-')) {
+          const idx = parseInt(hash.replace('#slide-', ''), 10) - 1;
+          if (idx >= 0 && idx < this.total) this.current = idx;
+        }
+
+        this.render();
+        this.buildOverview();
+        this.bindEvents();
+      }
+
+      render() {
+        this.slides.forEach((slide, idx) => {
+          slide.classList.remove('active', 'prev');
+          if (idx === this.current) {
+            slide.classList.add('active');
+            slide.scrollTop = 0;
+          } else if (idx < this.current) {
+            slide.classList.add('prev');
+          }
+        });
+
+        // Progress
+        const pct = ((this.current + 1) / this.total) * 100;
+        this.progressBar.style.width = pct + '%';
+
+        // Badge
+        const curStr = String(this.current + 1).padStart(2, '0');
+        const totStr = String(this.total).padStart(2, '0');
+        this.indicator.textContent = `${curStr} / ${totStr}`;
+
+        // Buttons
+        this.btnPrev.disabled = this.current === 0;
+        this.btnNext.disabled = this.current === this.total - 1;
+
+        // Hash
+        history.replaceState(null, null, `#slide-${this.current + 1}`);
+
+        // Update overview current
+        document.querySelectorAll('.overview-card').forEach((card, idx) => {
+          card.classList.toggle('current', idx === this.current);
+        });
+      }
+
+      next() {
+        if (this.current < this.total - 1) {
+          this.current++;
+          this.render();
+        }
+      }
+
+      prev() {
+        if (this.current > 0) {
+          this.current--;
+          this.render();
+        }
+      }
+
+      goTo(index) {
+        if (index >= 0 && index < this.total) {
+          this.current = index;
+          this.render();
+        }
+      }
+
+      buildOverview() {
+        const grid = document.getElementById('overview-grid');
+        grid.innerHTML = '';
+        const titles = [
+          '01 · Portada del Proyecto',
+          '02 · Diagnóstico y Oportunidad',
+          '03 · Análisis de 12 Referentes',
+          '04 · Seis Propuestas Estéticas',
+          '05 · Foco en "El encuentro (02)"',
+          '06 · Recorridos de Siguiente Paso',
+          '07 · Automatizaciones Inteligentes',
+          '08 · 8 Preguntas para la Reunión',
+          '09 · Hoja de Ruta y Lanzamiento'
+        ];
+
+        this.slides.forEach((_, idx) => {
+          const card = document.createElement('div');
+          card.className = `overview-card ${idx === this.current ? 'current' : ''}`;
+          card.innerHTML = `
+            <span class="overview-num">SLIDE ${String(idx + 1).padStart(2, '0')}</span>
+            <div class="overview-title">${titles[idx] || 'Diapositiva ' + (idx + 1)}</div>
+          `;
+          card.onclick = () => {
+            this.goTo(idx);
+            toggleOverview(false);
+          };
+          grid.appendChild(card);
+        });
+      }
+
+      bindEvents() {
+        this.btnNext.onclick = () => this.next();
+        this.btnPrev.onclick = () => this.prev();
+
+        // Keyboard navigation
+        window.addEventListener('keydown', (e) => {
+          // If modal open, handle Esc
+          if (document.getElementById('overview-modal').classList.contains('open')) {
+            if (e.key === 'Escape') toggleOverview(false);
+            return;
+          }
+          if (document.getElementById('preview-modal').classList.contains('open')) {
+            if (e.key === 'Escape') closePreview();
+            return;
+          }
+
+          if (e.key === 'ArrowRight' || e.key === 'PageDown' || e.key === ' ') {
+            e.preventDefault();
+            this.next();
+          } else if (e.key === 'ArrowLeft' || e.key === 'PageUp') {
+            e.preventDefault();
+            this.prev();
+          } else if (e.key === 'Home') {
+            e.preventDefault();
+            this.goTo(0);
+          } else if (e.key === 'End') {
+            e.preventDefault();
+            this.goTo(this.total - 1);
+          } else if (e.key === 'g' || e.key === 'G') {
+            toggleOverview();
+          } else if (e.key === 'f' || e.key === 'F') {
+            toggleFullscreen();
+          } else if (e.key === 't' || e.key === 'T') {
+            toggleTheme();
+          }
+        });
+
+        // Touch Swipe
+        let startX = 0;
+        let startY = 0;
+        window.addEventListener('touchstart', (e) => {
+          startX = e.touches[0].clientX;
+          startY = e.touches[0].clientY;
+        }, { passive: true });
+
+        window.addEventListener('touchend', (e) => {
+          const diffX = e.changedTouches[0].clientX - startX;
+          const diffY = e.changedTouches[0].clientY - startY;
+          if (Math.abs(diffX) > 60 && Math.abs(diffX) > Math.abs(diffY)) {
+            if (diffX < 0) this.next();
+            else this.prev();
+          }
+        }, { passive: true });
+      }
+    }
+
+    const deck = new PresentationDeck();
+
+    // OVERVIEW MODAL
+    function toggleOverview(force) {
+      const modal = document.getElementById('overview-modal');
+      const isOpen = force !== undefined ? force : !modal.classList.contains('open');
+      modal.classList.toggle('open', isOpen);
+      modal.setAttribute('aria-hidden', !isOpen);
+    }
+    document.getElementById('btn-overview').onclick = () => toggleOverview();
+
+    // LIVE IFRAME PREVIEW MODAL
+    function openPreview(url) {
+      const modal = document.getElementById('preview-modal');
+      const iframe = document.getElementById('preview-iframe');
+      const extLink = document.getElementById('preview-external-link');
+      const title = document.getElementById('preview-title');
+
+      iframe.src = url;
+      extLink.href = url;
+      title.textContent = 'Vista previa en vivo · ' + url.split('/').pop();
+      modal.classList.add('open');
+      modal.setAttribute('aria-hidden', 'false');
+    }
+
+    function closePreview() {
+      const modal = document.getElementById('preview-modal');
+      const iframe = document.getElementById('preview-iframe');
+      modal.classList.remove('open');
+      modal.setAttribute('aria-hidden', 'true');
+      iframe.src = 'about:blank';
+    }
+
+    // THEME CONTROLLER
+    function toggleTheme() {
+      const html = document.documentElement;
+      const current = html.getAttribute('data-theme') || 'dark';
+      const next = current === 'dark' ? 'light' : 'dark';
+      html.setAttribute('data-theme', next);
+      localStorage.setItem('caudal-deck-theme', next);
+      updateThemeLabels(next);
+    }
+
+    function updateThemeLabels(theme) {
+      const label = document.getElementById('theme-label');
+      const icon = document.getElementById('theme-icon');
+      if (theme === 'dark') {
+        label.textContent = 'Claro';
+        icon.textContent = '◐';
+      } else {
+        label.textContent = 'Oscuro';
+        icon.textContent = '◑';
+      }
+    }
+    document.getElementById('btn-theme').onclick = toggleTheme;
+
+    // Load saved theme
+    const savedTheme = localStorage.getItem('caudal-deck-theme');
+    if (savedTheme) {
+      document.documentElement.setAttribute('data-theme', savedTheme);
+      updateThemeLabels(savedTheme);
+    }
+
+    // FULLSCREEN CONTROLLER
+    function toggleFullscreen() {
+      if (!document.fullscreenElement) {
+        document.documentElement.requestFullscreen().catch(() => {});
+      } else {
+        if (document.exitFullscreen) {
+          document.exitFullscreen();
+        }
+      }
+    }
+    document.getElementById('btn-fullscreen').onclick = toggleFullscreen;
+
+    // INTERACTIVE QUESTIONS CHECKBOXES
+    function toggleQuestion(el) {
+      el.classList.toggle('checked');
+      saveQuestionsState();
+    }
+
+    function clearQuestions() {
+      document.querySelectorAll('.q-item').forEach(el => el.classList.remove('checked'));
+      saveQuestionsState();
+    }
+
+    function saveQuestionsState() {
+      const checkedIdxs = [];
+      document.querySelectorAll('.q-item').forEach((el, idx) => {
+        if (el.classList.contains('checked')) checkedIdxs.push(idx);
+      });
+      localStorage.setItem('caudal-deck-questions', JSON.stringify(checkedIdxs));
+    }
+
+    // Restore questions state
+    try {
+      const saved = JSON.parse(localStorage.getItem('caudal-deck-questions') || '[]');
+      const items = document.querySelectorAll('.q-item');
+      saved.forEach(idx => {
+        if (items[idx]) items[idx].classList.add('checked');
+      });
+    } catch(e) {}
+  </script>
+</body>
+</html>
+
