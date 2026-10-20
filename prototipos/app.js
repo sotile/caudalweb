@@ -38,6 +38,30 @@ document.querySelectorAll('[data-video]').forEach(button => {
 });
 dialog?.querySelector('.close-dialog').addEventListener('click', () => dialog.close());
 dialog?.addEventListener('close', () => dialog.querySelector('.video-container').replaceChildren());
+const cultura = document.querySelector('[data-cultura]');
+if (cultura) {
+  const frame = cultura.querySelector('[data-cultura-frame]');
+  const tracks = [...cultura.querySelectorAll('[data-track]')];
+  const playCultura = button => {
+    const id = button.dataset.track;
+    if (!/^[a-zA-Z0-9_-]{11}$/.test(id)) return;
+    const title = button.dataset.title || 'Cultura Music';
+    tracks.forEach(item => {
+      if (!item.closest('.cultura-tracks')) return;
+      if (item.dataset.track === id) item.setAttribute('aria-current', 'true');
+      else item.removeAttribute('aria-current');
+    });
+    const iframe = document.createElement('iframe');
+    iframe.src = `https://www.youtube-nocookie.com/embed/${id}?autoplay=1&playsinline=1&rel=0`;
+    iframe.title = title;
+    iframe.allow = 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share';
+    iframe.allowFullscreen = true;
+    iframe.referrerPolicy = 'strict-origin-when-cross-origin';
+    frame.replaceChildren(iframe);
+  };
+  tracks.forEach(button => button.addEventListener('click', () => playCultura(button)));
+}
+
 dialog?.addEventListener('click', event => {
   if (event.target === dialog) {
     const rect = dialog.getBoundingClientRect();

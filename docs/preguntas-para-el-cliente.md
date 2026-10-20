@@ -18,8 +18,8 @@ Esta versión sintetiza las decisiones prioritarias para una **reunión ejecutiv
   3. *Difusión de contenidos:* Que los mensajes, series y visión alcancen a más personas en la semana.
 * **Impacto en el diseño:** Define qué bloque va primero en la portada y a dónde dirige el botón principal de navegación.
 
-### 2. Validación de la dirección estética (Propuesta 02 · El encuentro)
-* **Pregunta:** Mostrando la maqueta navegable de **02 · El encuentro** (azul profundo, arena, fotografía comunitaria y calidez editorial): ¿Sienten que esta dirección transmite la identidad real de Caudal? ¿Qué ajustes o matices de tono consideran necesarios?
+### 2. Validación de la dirección estética (Propuesta 01 · El encuentro)
+* **Pregunta:** Mostrando la maqueta navegable de **01 · El encuentro** (azul profundo, arena, fotografía comunitaria y calidez editorial): ¿Sienten que esta dirección transmite la identidad real de Caudal? ¿Qué ajustes o matices de tono consideran necesarios?
 * **Decisión esperada:** Aprobación del concepto base para el desarrollo del sitio final.
 
 ### 3. Gobernanza y circuito de aprobación

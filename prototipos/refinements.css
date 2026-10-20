@@ -204,6 +204,37 @@ body .family-card>div{color:#fff}
  .theme-links a{font-size:10px;padding:9px 12px}
  .direction-badge{left:15px;bottom:15px;font-size:9px}
 }
+.event-date{height:245px;display:flex;flex-direction:column;justify-content:flex-end;gap:4px;padding:22px;border-radius:8px;background:var(--soft);border:1px solid var(--line);box-sizing:border-box}
+.event-date span,.event-date small{letter-spacing:.14em;text-transform:uppercase;font-size:12px}
+.event-date strong{font-size:72px;line-height:.85;letter-spacing:-.05em;font-weight:560}
+.event-source{margin-top:18px;font-size:12px;opacity:.65}
+.cultura-links{display:flex;gap:18px;flex-wrap:wrap;margin-top:22px;font-size:14px}
+.cultura-links a{border-bottom:1px solid var(--line);padding-bottom:4px}
+.cultura-stage{display:grid;grid-template-columns:1.45fr .8fr;gap:22px;align-items:start;margin-top:34px}
+.cultura-frame{position:relative;aspect-ratio:16/9;background:#0b141b;border-radius:12px;overflow:hidden}
+.cultura-frame iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+.cultura-poster{position:absolute;inset:0;display:block;padding:0;border:0;background:#0b141b;color:#fff}
+.cultura-poster img{width:100%;height:100%;object-fit:cover}
+.cultura-play{position:absolute;left:18px;bottom:18px;background:#ead5b1;color:#142532;border-radius:999px;padding:10px 16px;font-size:13px}
+.cultura-list{display:flex;flex-direction:column;min-height:0}
+.cultura-list>.eyebrow{margin-bottom:10px}
+.cultura-tracks{list-style:none;margin:0;padding:0;overflow:auto;border:1px solid var(--line);border-radius:12px;max-height:440px}
+.cultura-tracks button{width:100%;display:flex;gap:12px;align-items:center;text-align:left;background:transparent;border:0;border-bottom:1px solid var(--line);padding:10px 12px}
+.cultura-tracks img{width:72px;height:40px;flex:none;border-radius:4px}
+.cultura-tracks button[aria-current=true]{background:var(--soft)}
+.cultura-audio{display:grid;grid-template-columns:.7fr 1.3fr;gap:28px;align-items:center;margin-top:36px}
+.cultura-audio iframe{width:100%;border:0;border-radius:12px}
+.cultura-photos{margin-top:48px}
+.cultura-ig{display:grid;grid-template-columns:repeat(5,1fr);gap:10px;margin-top:18px}
+.cultura-ig a{display:block;aspect-ratio:4/5;overflow:hidden;border-radius:10px;background:var(--soft)}
+.cultura-ig img{width:100%;height:100%;object-fit:cover}
+@media(max-width:760px){
+ .cultura-stage,.cultura-audio{grid-template-columns:1fr}
+ .cultura-tracks{max-height:320px}
+ .cultura-ig{grid-template-columns:repeat(2,1fr)}
+ .event-card .event-date{height:100%;min-height:160px;width:120px;padding:14px}
+ .event-date strong{font-size:40px}
+}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{animation:none!important;transition:none!important}.story-stage{margin-top:20px}}
 
 html[data-theme=dark] body.casa .missions{background:#542737;color:#fff}

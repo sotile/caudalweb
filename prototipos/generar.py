@@ -4,8 +4,8 @@ from html import escape
 
 ROOT = Path(__file__).parent
 CONCEPTS = [
-    ('01-casa-abierta', 'Casa abierta', 'Una bienvenida que se siente en casa.', 'Editorial contemporánea · retratos rectangulares · crema y bordó', 'casa'),
-    ('02-el-encuentro', 'El encuentro', 'Un hogar para muchos. Un lugar para vos.', 'Dirección principal · reunión y retrato · azul y arena', 'encuentro'),
+    ('01-el-encuentro', 'El encuentro', 'Un hogar para muchos. Un lugar para vos.', 'Dirección principal · reunión y retrato · azul y arena', 'encuentro'),
+    ('02-casa-abierta', 'Casa abierta', 'Una bienvenida que se siente en casa.', 'Editorial contemporánea · retratos rectangulares · crema y bordó', 'casa'),
     ('03-vida-para-la-ciudad', 'Vida para la Ciudad', 'La fe toma forma en lo cotidiano.', 'Editorial urbana · retícula · misión y comunidad', 'ciudad'),
     ('04-tu-siguiente-paso', 'Tu siguiente paso', 'Un camino claro para cada persona.', 'Contemporánea · lila y tinta · recorridos visibles', 'camino'),
     ('05-esta-semana', 'Esta semana en Caudal', 'Una comunidad que sigue conectada.', 'Portada modular · actualidad · contenidos y agenda', 'semana'),
@@ -35,11 +35,19 @@ def hero(theme):
 
 
 def fragment(name):
+    if name == 'eventos':
+        try:
+            from calendario import html_eventos
+            live = html_eventos(ROOT)
+            if live:
+                return live
+        except Exception as exc:
+            print(f'Agenda: se mantiene la muestra ({exc}).')
     return (ROOT/'templates'/f'{name}.html').read_text()
 
 ORDERS = {
     'casa':['bienvenida','pasos','mensajes','grupos','eventos','familia','misiones','canales','visita'],
-    'encuentro':['semana','bienvenida','familia','pasos','mensajes','grupos','eventos','misiones','canales','visita'],
+    'encuentro':['semana','bienvenida','familia','pasos','mensajes','cultura','grupos','eventos','misiones','canales','visita'],
     'ciudad':['bienvenida','misiones','grupos','mensajes','eventos','familia','pasos','canales','visita'],
     'camino':['pasos','bienvenida','grupos','mensajes','familia','eventos','misiones','canales','visita'],
     'semana':['eventos','mensajes','grupos','bienvenida','familia','pasos','misiones','canales','visita'],
@@ -48,7 +56,7 @@ ORDERS = {
 
 def document(title, body, cls=''):
     default = 'dark' if cls=='encuentro' else 'light'
-    return f'''<!doctype html><html lang="es-AR" data-default-theme="{default}"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="robots" content="noindex,nofollow"><meta name="description" content="Propuesta de diseño para la web de la iglesia Caudal de Vida en San Miguel."><meta name="color-scheme" content="light dark"><title>{escape(title)} · Caudal de Vida</title><link rel="icon" href="assets/logo-social.jpg"><script src="theme-init.js"></script><link rel="stylesheet" href="styles.css"><link rel="stylesheet" href="refinements.css"><script src="app.js" defer></script></head><body class="{cls}">{body}</body></html>'''
+    return f'''<!doctype html><html lang="es-AR" data-default-theme="{default}"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="robots" content="noindex,nofollow"><meta name="description" content="Propuesta de diseño para la web de la iglesia Caudal de Vida en San Miguel."><meta name="color-scheme" content="light dark"><title>{escape(title)} · Caudal de Vida</title><link rel="icon" href="assets/logo-social.jpg"><script src="theme-init.js"></script><link rel="stylesheet" href="styles.css"><link rel="stylesheet" href="refinements.css?v=20261019c"><script src="app.js?v=20261019b" defer></script></head><body class="{cls}">{body}</body></html>'''
 
 THEME_CONTROL = '<button class="theme-toggle" type="button" aria-label="Activar modo oscuro" aria-pressed="false"><span data-theme-icon aria-hidden="true">◐</span><span data-theme-label>Oscuro</span></button>'
 
@@ -59,7 +67,13 @@ for i,(slug,name,tagline,description,theme) in enumerate(CONCEPTS):
     body=header+'<main id="contenido">'+hero(theme)+fragment('quick')+''.join(fragment(k) for k in ORDERS[theme])+'</main>'+fragment('footer')
     (ROOT/(slug+'.html')).write_text(document(name,body,theme))
 
-cards=''.join(f'''<article class="concept-card preview-{t}"><a class="concept-preview" href="{s}.html"><img src="previews/{s}-light.jpg" data-preview-light="previews/{s}-light.jpg" data-preview-dark="previews/{s}-dark.jpg" alt="Vista de la propuesta {escape(n)}" loading="lazy"><span class="preview-number">0{i+1}</span><span class="preview-word">{escape(n)}</span>{'<span class="direction-badge">Dirección principal</span>' if i==1 else '<span class="direction-badge">Scroll experimental</span>' if i==5 else ''}</a><div class="concept-details"><span class="eyebrow">Propuesta 0{i+1}</span><h2><a href="{s}.html">{escape(n)} <span aria-hidden="true">↗</span></a></h2><p>{escape(tag)}</p><small>{escape(d)}</small><div class="theme-links"><a href="{s}.html?theme=light">☀ Versión clara ↗</a><a href="{s}.html?theme=dark">◐ Versión oscura ↗</a></div></div></article>''' for i,(s,n,tag,d,t) in enumerate(CONCEPTS))
+# Compatibilidad con enlaces y marcadores anteriores
+if (ROOT/'01-el-encuentro.html').exists():
+    (ROOT/'02-el-encuentro.html').write_text((ROOT/'01-el-encuentro.html').read_text())
+if (ROOT/'02-casa-abierta.html').exists():
+    (ROOT/'01-casa-abierta.html').write_text((ROOT/'02-casa-abierta.html').read_text())
+
+cards=''.join(f'''<article class="concept-card preview-{t}"><a class="concept-preview" href="{s}.html"><img src="previews/{s}-light.jpg" data-preview-light="previews/{s}-light.jpg" data-preview-dark="previews/{s}-dark.jpg" alt="Vista de la propuesta {escape(n)}" loading="lazy"><span class="preview-number">0{i+1}</span><span class="preview-word">{escape(n)}</span>{'<span class="direction-badge">Dirección principal</span>' if i==0 else '<span class="direction-badge">Scroll experimental</span>' if i==5 else ''}</a><div class="concept-details"><span class="eyebrow">Propuesta 0{i+1}</span><h2><a href="{s}.html">{escape(n)} <span aria-hidden="true">↗</span></a></h2><p>{escape(tag)}</p><small>{escape(d)}</small><div class="theme-links"><a href="{s}.html?theme=light">☀ Versión clara ↗</a><a href="{s}.html?theme=dark">◐ Versión oscura ↗</a></div></div></article>''' for i,(s,n,tag,d,t) in enumerate(CONCEPTS))
 gallery=f'''<main class="gallery wrap"><header class="gallery-header"><a class="brand" href="index.html">{image('logo-social.jpg','','brand-mark',True)}<span>CAUDAL<span>DE VIDA</span></span></a><div class="gallery-tools">{THEME_CONTROL}<a class="eyebrow" href="../index.html" style="font-weight:700; color:var(--accent);">Modo Presentación (Slides) ⛶</a><a class="eyebrow" href="../referentes/index.html">Dossier de referentes ↗</a></div></header><div class="gallery-intro"><p class="eyebrow">Seis propuestas. Una misma iglesia.</p><h1>Encontrar la forma<br>de <em>sentirnos cerca.</em></h1><p>Seis direcciones, cada una en claro y oscuro. El encuentro es la dirección que proponemos: la escena de la reunión, la frase de casa y la semana a la vista. Un lugar para vos explora una experiencia con profundidad y movimiento al recorrer la página.</p></div><div class="concept-grid">{cards}</div><section class="gallery-notes"><h2>Cómo comparar las propuestas</h2><div><p><strong>Primera impresión.</strong> ¿Cuál transmite mejor la identidad y la bienvenida de Caudal?</p><p><strong>Facilidad de uso.</strong> ¿Se entiende cómo visitar, encontrar un grupo o ver un mensaje?</p><p><strong>Contenido y fotografía.</strong> ¿Qué equilibrio entre personas, mensajes y actividades representa mejor a la iglesia?</p></div><p>Fotografías de la web actual y de los canales de Caudal. Textos demo basados en el documento de trabajo. La agenda es ilustrativa; los horarios y contactos deben confirmarse antes de publicar. El modo podcast queda para una etapa posterior.</p><a href="https://caudaldevida.net/" target="_blank" rel="noopener">Consultar la web existente ↗</a></section><footer class="gallery-footer">Caudal de Vida · Prototipos locales para revisión · Octubre de 2026</footer></main>'''
 (ROOT/'index.html').write_text(document('Seis propuestas para el inicio',gallery,'gallery-page'))
 print('Generados: galería y seis prototipos HTML.')

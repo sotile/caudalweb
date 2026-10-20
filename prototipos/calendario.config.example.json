@@ -1,0 +1,7 @@
+{
+  "ics_url": "",
+  "zona": "America/Argentina/Buenos_Aires",
+  "dias": 90,
+  "maximo": 3,
+  "nota": "Copiá este archivo a calendario.config.json y pegá la dirección iCal del calendario. En Google Calendar: configuración de ese calendario, Integrar calendario, Dirección secreta en formato iCal. El calendario tiene que contener solo lo que puede publicarse."
+}

@@ -12,7 +12,7 @@ Se prepararon [seis prototipos navegables del inicio](../prototipos/index.html) 
 
 El [dossier de referentes para el cliente](../referentes/index.html) reúne las doce referencias aportadas, once sitios capturados y una referencia aún sin identificar; se señalan por separado las correspondencias institucionales pendientes. Incluye lectura estética y funcional, canales con cifras públicas fechadas cuando se pudieron verificar, vistas móviles, comparación de hasta tres casos y vínculos a las seis propuestas. También se entrega una versión PDF para reunión.
 
-La revisión estética prioriza **El encuentro (02)** por preferencia del cliente. **Casa abierta (01)** reemplaza los recortes semicirculares por fotografías rectangulares; **Un lugar para vos (06)** explora una narrativa con movimiento al hacer scroll. Las seis propuestas incluyen paletas clara y oscura y acceso directo a ambas desde la galería. En móvil y con movimiento reducido, la experiencia experimental presenta el relato sin animaciones.
+La revisión estética prioriza **El encuentro (01)** por preferencia del cliente. **Casa abierta (02)** reemplaza los recortes semicirculares por fotografías rectangulares; **Un lugar para vos (06)** explora una narrativa con movimiento al hacer scroll. Las seis propuestas incluyen paletas clara y oscura y acceso directo a ambas desde la galería. En móvil y con movimiento reducido, la experiencia experimental presenta el relato sin animaciones.
 
 ## Punto de partida y decisiones pendientes
 
@@ -199,7 +199,7 @@ Ver la [lámina conceptual de las tres propuestas](propuestas-esteticas.svg). Mu
 | Movimiento | Transiciones discretas y opcionales | Pequeñas secuencias y video con alternativa estática | Movimiento mínimo; protagonismo de relatos |
 | Mejor uso | Sitio principal y primera visita | Campañas, eventos y Cultura Jóvenes | Misiones, testimonios y visión |
 
-**Dirección actual:** El encuentro (prototipo 02) como base principal. Casa abierta se conserva como alternativa editorial con imágenes rectangulares y Un lugar para vos (06) como exploración con scroll dinámico. Las seis alternativas tienen modo claro y oscuro. Compartir tipografía de lectura, botones, espaciado y navegación para conservar unidad.
+**Dirección actual:** El encuentro (prototipo 01) como base principal. Casa abierta (02) se conserva como alternativa editorial con imágenes rectangulares y Un lugar para vos (06) como exploración con scroll dinámico. Las seis alternativas tienen modo claro y oscuro. Compartir tipografía de lectura, botones, espaciado y navegación para conservar unidad.
 
 Para cada dirección se diseñarán una portada de escritorio, una portada móvil, un encabezado de Soy nuevo, una tarjeta de evento y una tarjeta de mensaje. Se evaluarán con el mismo contenido para poder comparar legibilidad, personalidad y facilidad de visita.
 
