@@ -47,3 +47,7 @@ build/
 
 # Paquete local de entrega. El material versionado está en prototipos/ y referentes/.
 *.zip
+
+# Archivos pesados originales de diseño y manuales de marca (>100MB)
+identidad/
+*.ai

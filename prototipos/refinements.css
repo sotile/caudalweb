@@ -1,8 +1,129 @@
+/* ==========================================================================
+   TIPOGRAFÍAS Y COLORES OFICIALES - MANUAL DE MARCA CAUDAL 2025
+   ========================================================================== */
+@font-face {
+  font-family: 'Neue Montreal';
+  src: url('assets/fonts/NeueMontreal-Regular.otf') format('opentype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Neue Montreal';
+  src: url('assets/fonts/NeueMontreal-Light.otf') format('opentype');
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Neue Montreal';
+  src: url('assets/fonts/NeueMontreal-Bold.otf') format('opentype');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Neue Montreal';
+  src: url('assets/fonts/NeueMontreal-Italic.otf') format('opentype');
+  font-weight: 400;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Geometos Neue';
+  src: url('assets/fonts/GeometosNeue.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Geometos Neue';
+  src: url('assets/fonts/GeometosNeueLight.ttf') format('truetype');
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Geometos Neue';
+  src: url('assets/fonts/GeometosNeueBold.ttf') format('truetype');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Geometos Neue';
+  src: url('assets/fonts/GeometosNeueExtraBold.ttf') format('truetype');
+  font-weight: 800;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Geometos Neue';
+  src: url('assets/fonts/GeometosNeueUltra.ttf') format('truetype');
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+:root {
+  --font-body: 'Neue Montreal', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-display: 'Geometos Neue', sans-serif;
+
+  /* Paleta Oficial Caudal de Vida 2025 */
+  --caudal-blue: #0152cd;
+  --caudal-blue-mid: #3a7efe;
+  --caudal-blue-light: #7097ff;
+  --caudal-night: #00082e;
+  --caudal-sand: #d9ccc5;
+  --caudal-ochre: #cf8a52;
+  --caudal-terracotta: #bf4226;
+  --caudal-coral: #d84030;
+  --caudal-white: #f7f4f1;
+}
+
+body {
+  font-family: var(--font-body);
+}
+
+h1, h2, h3, .brand>span, .eyebrow, .header-cta, .button, .step-number, .pillar-icon, .direction-badge, .week-main h2, .dialog-heading h2, .footer-brand, .preview-number, .preview-word {
+  font-family: var(--font-display);
+  letter-spacing: -0.01em;
+}
+
+.eyebrow {
+  letter-spacing: 0.12em;
+  font-weight: 700;
+}
+.header-cta, .button {
+  letter-spacing: 0.04em;
+  font-weight: 700;
+}
+
+/* Logos Oficiales en Navegación */
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  text-decoration: none;
+}
+.brand-logo {
+  height: 38px;
+  width: auto;
+  max-width: 190px;
+  object-fit: contain;
+  display: block;
+}
+html[data-theme="light"] .brand-logo.logo-dark { display: none !important; }
+html[data-theme="light"] .brand-logo.logo-light { display: block !important; }
+html[data-theme="dark"] .brand-logo.logo-dark { display: block !important; }
+html[data-theme="dark"] .brand-logo.logo-light { display: none !important; }
+
 /* Dirección de arte v2. Paletas independientes, contenido compartido. */
 body{--button-ink:#fff;--panel:var(--soft);--elevation:0 16px 50px #00000008}
-html[data-theme=light] body.encuentro{--paper:#f7f7f3;--ink:#122c39;--accent:#a77832;--soft:#e9eeec;--line:#ccd6d6;--button-ink:#fff}
+html[data-theme=light] body.encuentro{--paper:#f7f4f1;--ink:#00082e;--accent:#0152cd;--soft:#ede6df;--line:#d9ccc5;--button-ink:#fff}
 html[data-theme=dark] body{--paper:#161619;--ink:#f2ede8;--accent:#e6a6b5;--soft:#232226;--line:#42383e;--button-ink:#261820;--elevation:0 16px 50px #0002}
-html[data-theme=dark] body.encuentro{--paper:#0c171e;--ink:#f3f3eb;--accent:#e3c995;--soft:#15262f;--line:#344650;--button-ink:#17232b}
+html[data-theme=dark] body.encuentro{--paper:#00082e;--ink:#f7f4f1;--accent:#cf8a52;--soft:#081542;--line:#1c2b5e;--button-ink:#00082e}
 html[data-theme=dark] body.ciudad{--paper:#101d27;--ink:#eff3ef;--accent:#9fcee8;--soft:#1a2d3b;--line:#395163;--button-ink:#102936}
 html[data-theme=dark] body.camino{--paper:#191723;--ink:#f3effc;--accent:#bda8f8;--soft:#282238;--line:#483c60;--button-ink:#23173f}
 html[data-theme=dark] body.semana{--paper:#111d26;--ink:#eff6fb;--accent:#9bc9ed;--soft:#1c2e3b;--line:#365061;--button-ink:#112b40}
