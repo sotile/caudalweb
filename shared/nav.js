@@ -1,4 +1,7 @@
 (() => {
+  // Asegurar que no quede ningún enlace a referentes en la navegación
+  document.querySelectorAll('.caudal-nav a[href*="referentes"]').forEach((el) => el.remove());
+
   const paint = (theme) => {
     document.documentElement.dataset.theme = theme;
     document.documentElement.setAttribute('data-theme', theme);

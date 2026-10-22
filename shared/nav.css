@@ -57,6 +57,9 @@ html[data-theme="light"] .caudal-nav .logo-light { display: block; }
   align-items: center;
   gap: 4px;
 }
+.caudal-nav-links a[href*="referentes"] {
+  display: none !important;
+}
 .caudal-nav-links a,
 .caudal-nav-tools a,
 .caudal-nav-tools button,
