@@ -1,0 +1,107 @@
+@font-face {
+  font-family: 'Neue Montreal';
+  src: url('../prototipos/assets/fonts/NeueMontreal-Regular.otf') format('opentype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Neue Montreal';
+  src: url('../prototipos/assets/fonts/NeueMontreal-Bold.otf') format('opentype');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+.caudal-nav {
+  position: sticky;
+  top: 0;
+  z-index: 300;
+  min-height: 64px;
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  padding: 10px 22px;
+  background: #f7f4f1;
+  color: #00082e;
+  border-bottom: 1px solid #d9ccc5;
+  font-family: 'Neue Montreal', 'Segoe UI', sans-serif;
+}
+.caudal-nav.is-fixed {
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  min-height: 64px;
+}
+html[data-theme="dark"] .caudal-nav {
+  background: #00082e;
+  color: #f7f4f1;
+  border-bottom-color: #1c2b5e;
+}
+.caudal-nav-brand {
+  display: flex;
+  align-items: center;
+  flex: none;
+}
+.caudal-nav-brand img {
+  height: 32px;
+  width: auto;
+  display: block;
+}
+.caudal-nav .logo-light { display: none; }
+html[data-theme="light"] .caudal-nav .logo-dark { display: none; }
+html[data-theme="light"] .caudal-nav .logo-light { display: block; }
+.caudal-nav-links {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+.caudal-nav-links a,
+.caudal-nav-tools a,
+.caudal-nav-tools button,
+.caudal-theme {
+  appearance: none;
+  border: 0;
+  background: transparent;
+  color: inherit;
+  font: inherit;
+  font-size: 14px;
+  font-weight: 650;
+  text-decoration: none;
+  border-radius: 999px;
+  padding: 8px 14px;
+  cursor: pointer;
+  white-space: nowrap;
+}
+.caudal-nav-links a[aria-current="page"] {
+  background: #0152cd;
+  color: #fff;
+}
+.caudal-nav-tools {
+  margin-left: auto;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.caudal-nav select {
+  background: transparent;
+  color: inherit;
+  border: 1px solid currentColor;
+  border-radius: 999px;
+  padding: 7px 12px;
+  font: inherit;
+  font-size: 13px;
+  max-width: 240px;
+}
+.caudal-theme {
+  border: 1px solid currentColor;
+}
+@media (max-width: 720px) {
+  .caudal-nav { flex-wrap: wrap; }
+  .caudal-nav-links { order: 3; width: 100%; }
+  .caudal-nav select { max-width: 150px; }
+}
+@media print {
+  .caudal-nav { display: none !important; }
+}

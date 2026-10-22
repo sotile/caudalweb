@@ -51,3 +51,4 @@ build/
 # Archivos pesados originales de diseño y manuales de marca (>100MB)
 identidad/
 *.ai
+propuesta/

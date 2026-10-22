@@ -1,15 +1,16 @@
-"""Genera seis prototipos estáticos. Ejecutar: python3 prototipos/generar.py."""
+"""Genera los prototipos estáticos. Ejecutar: python3 prototipos/generar.py."""
 from pathlib import Path
 from html import escape
 
 ROOT = Path(__file__).parent
 CONCEPTS = [
-    ('01-el-encuentro', 'El encuentro', 'Un hogar para muchos. Un lugar para vos.', 'Dirección principal · reunión y retrato · azul y arena', 'encuentro'),
-    ('02-casa-abierta', 'Casa abierta', 'Una bienvenida que se siente en casa.', 'Editorial contemporánea · retratos rectangulares · crema y bordó', 'casa'),
-    ('03-vida-para-la-ciudad', 'Vida para la Ciudad', 'La fe toma forma en lo cotidiano.', 'Editorial urbana · retícula · misión y comunidad', 'ciudad'),
-    ('04-tu-siguiente-paso', 'Tu siguiente paso', 'Un camino claro para cada persona.', 'Contemporánea · lila y tinta · recorridos visibles', 'camino'),
-    ('05-esta-semana', 'Esta semana en Caudal', 'Una comunidad que sigue conectada.', 'Portada modular · actualidad · contenidos y agenda', 'semana'),
-    ('06-un-lugar-para-vos', 'Un lugar para vos', 'Una invitación simple y memorable.', 'Exploración experimental · scroll narrativo · profundidad y movimiento', 'origen'),
+    ('01-el-encuentro', 'El encuentro', 'Un hogar para muchos. Un lugar para vos.', 'Dirección principal · primarios del manual · azul #0152cd', 'encuentro'),
+    ('02-casa-abierta', 'Casa abierta', 'Una bienvenida que se siente en casa.', 'Manual · hueso, noche y coral secundario', 'casa'),
+    ('03-vida-para-la-ciudad', 'Vida para la Ciudad', 'La fe toma forma en lo cotidiano.', 'Manual · azul secundario y azul primario', 'ciudad'),
+    ('04-tu-siguiente-paso', 'Tu siguiente paso', 'Un camino claro para cada persona.', 'Manual · azul primario, cielo y coral', 'camino'),
+    ('05-esta-semana', 'Esta semana en Caudal', 'Una comunidad que sigue conectada.', 'Manual · azul secundario y cielo', 'semana'),
+    ('06-un-lugar-para-vos', 'Un lugar para vos', 'Una invitación simple y memorable.', 'Manual · noche, azul primario y cielo', 'origen'),
+    ('07-el-encuentro-secundarios', 'El encuentro · secundarios', 'La misma escena, con la paleta secundaria.', 'Alternativa · azul 38/109/169, cielo 125/198/224, coral 238/101/79', 'encuentro-sec'),
 ]
 
 def image(name, alt, cls='', eager=False):
@@ -23,7 +24,7 @@ WELCOME = 'No importa si es tu primera vez o si estás buscando un lugar para vo
 def hero(theme):
     if theme == 'casa':
         return f'''<section class="hero hero-casa wrap"><div class="hero-copy"><p class="eyebrow">Iglesia Caudal de Vida · San Miguel</p><h1>Un hogar para muchos.<br><em>Un lugar para vos.</em></h1><p class="intro">{WELCOME}</p><div class="actions">{button('Quiero visitar Caudal')}{button('Conocé nuestra iglesia','#nosotros',True)}</div><p class="small-note">Hay un próximo paso para tu historia.</p></div><div class="photo-composition">{image('integrar.jpg','Un abrazo de bienvenida en Caudal','portrait-main',True)}{image('grupos.jpg','Jóvenes compartiendo en comunidad','portrait-small',True)}<span class="photo-caption">La vida es mejor<br>cuando la compartimos.</span></div></section>'''
-    if theme == 'encuentro':
+    if theme in ('encuentro', 'encuentro-sec'):
         return f'''<section class="hero hero-encuentro">{image('1800x892-01.jpg','La comunidad de Caudal reunida para adorar','hero-background',True)}<div class="hero-copy wrap"><p class="eyebrow">Caudal de Vida · San Miguel</p><h1>Un hogar para muchos.<br><em>Un lugar para vos.</em></h1><p class="intro">{WELCOME}</p><div class="actions">{button('Quiero visitar Caudal')}</div></div><figure class="hero-portrait">{image('integrar.jpg','Un abrazo de bienvenida en Caudal','',True)}<figcaption>La vida es mejor cuando la compartimos.</figcaption></figure><div class="scene-caption wrap"><a href="#nosotros">Descubrí Caudal <span aria-hidden="true">↓</span></a><a class="scene-visit" href="#visitanos"><span>Nos encontramos en casa<small>España 1626 · San Miguel</small></span><b aria-hidden="true">↗</b></a></div></section>'''
     if theme == 'ciudad':
         return f'''<section class="hero hero-ciudad wrap"><div class="editorial-line"><span>UNA IGLESIA. MUCHAS HISTORIAS.</span><span>SAN MIGUEL, BUENOS AIRES</span></div><h1>Vida para<br>la <em>Ciudad.</em><span class="headline-star" aria-hidden="true">✳</span></h1><div class="editorial-bottom"><p>Creemos en una fe que se vive todos los días. Cerca de Dios, cerca de las personas, cerca de nuestra ciudad.</p>{button('Encontrá tu lugar')}</div><div class="city-photo">{image('1800x892.jpg','Personas reunidas en el auditorio de Caudal','',True)}<span>Personas reales. Una vida compartida.</span></div></section>'''
@@ -48,6 +49,7 @@ def fragment(name):
 ORDERS = {
     'casa':['bienvenida','pasos','mensajes','grupos','eventos','familia','misiones','canales','visita'],
     'encuentro':['semana','bienvenida','familia','pasos','mensajes','cultura','grupos','eventos','misiones','canales','visita'],
+    'encuentro-sec':['semana','bienvenida','familia','pasos','mensajes','cultura','grupos','eventos','misiones','canales','visita'],
     'ciudad':['bienvenida','misiones','grupos','mensajes','eventos','familia','pasos','canales','visita'],
     'camino':['pasos','bienvenida','grupos','mensajes','familia','eventos','misiones','canales','visita'],
     'semana':['eventos','mensajes','grupos','bienvenida','familia','pasos','misiones','canales','visita'],
@@ -55,17 +57,31 @@ ORDERS = {
 }
 
 def document(title, body, cls=''):
-    default = 'dark' if cls=='encuentro' else 'light'
-    return f'''<!doctype html><html lang="es-AR" data-default-theme="{default}"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="robots" content="noindex,nofollow"><meta name="description" content="Propuesta de diseño para la web de la iglesia Caudal de Vida en San Miguel."><meta name="color-scheme" content="light dark"><title>{escape(title)} · Caudal de Vida</title><link rel="icon" href="assets/logo-social.jpg"><script src="theme-init.js"></script><link rel="stylesheet" href="styles.css"><link rel="stylesheet" href="refinements.css?v=20261019c"><script src="app.js?v=20261019b" defer></script></head><body class="{cls}">{body}</body></html>'''
+    default = 'dark' if cls == 'encuentro' else 'light'
+    body_class = 'encuentro encuentro-sec' if cls == 'encuentro-sec' else cls
+    return f'''<!doctype html><html lang="es-AR" data-default-theme="{default}"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="robots" content="noindex,nofollow"><meta name="description" content="Propuesta de diseño para la web de la iglesia Caudal de Vida en San Miguel."><meta name="color-scheme" content="light dark"><title>{escape(title)} · Caudal de Vida</title><link rel="icon" href="assets/logo-social.jpg"><script src="../shared/theme-init.js"></script><link rel="stylesheet" href="styles.css"><link rel="stylesheet" href="refinements.css?v=20261021b"><link rel="stylesheet" href="../shared/nav.css"><script src="app.js?v=20261019b" defer></script><script src="../shared/nav.js" defer></script></head><body class="{body_class}">{body}</body></html>'''
 
-THEME_CONTROL = '<button class="theme-toggle" type="button" aria-label="Activar modo oscuro" aria-pressed="false"><span data-theme-icon aria-hidden="true">◐</span><span data-theme-label>Oscuro</span></button>'
+THEME_BUTTON = '<button class="caudal-theme" type="button" data-caudal-theme aria-label="Activar modo oscuro"><span data-theme-icon aria-hidden="true">◐</span><span data-theme-label>Oscuro</span></button>'
+
+def shell_nav(current, extra=''):
+    def item(key, href, label):
+        mark = ' aria-current="page"' if key == current else ''
+        return f'<a href="{href}"{mark}>{label}</a>'
+    return (
+        '<header class="caudal-nav"><a class="caudal-nav-brand" href="../index.html#slide-1" aria-label="Caudal de Vida">'
+        '<img class="logo-dark" src="assets/logo-caudal-blanco.png" alt=""><img class="logo-light" src="assets/logo-caudal-negro.png" alt=""></a>'
+        '<nav class="caudal-nav-links" aria-label="Presentación">'
+        + item('presentacion', '../index.html#slide-1', 'Presentación')
+        + item('demos', 'index.html', 'Demos')
+        + f'</nav><div class="caudal-nav-tools">{extra}{THEME_BUTTON}</div></header>'
+    )
 
 BRAND_MARKUP = '<a class="brand" href="#contenido" aria-label="Caudal de Vida"><img class="brand-logo logo-dark" src="assets/logo-caudal-blanco.png" alt="Caudal de Vida"><img class="brand-logo logo-light" src="assets/logo-caudal-negro.png" alt="Caudal de Vida"></a>'
 BRAND_GALLERY = '<a class="brand" href="index.html" aria-label="Caudal de Vida"><img class="brand-logo logo-dark" src="assets/logo-caudal-blanco.png" alt="Caudal de Vida"><img class="brand-logo logo-light" src="assets/logo-caudal-negro.png" alt="Caudal de Vida"></a>'
 
 for i,(slug,name,tagline,description,theme) in enumerate(CONCEPTS):
     options=''.join(f'<option value="{s}.html" {"selected" if s==slug else ""}>{n+1:02d} · {escape(t)}</option>' for n,(s,t,*_) in enumerate(CONCEPTS))
-    toolbar=f'<aside class="reviewbar" aria-label="Comparador de prototipos"><a href="index.html">← Las seis propuestas</a><span>Prototipo {i+1:02d} · Contenido demo</span><label><span class="sr-only">Cambiar propuesta</span><select id="concept-select">{options}</select></label>{THEME_CONTROL}</aside>'
+    toolbar=shell_nav('demos', f'<label><span class="sr-only">Cambiar demo</span><select id="concept-select">{options}</select></label>')
     header=f'''<a class="skip" href="#contenido">Saltar al contenido</a>{toolbar}<header class="site-header wrap">{BRAND_MARKUP}<button class="menu-toggle" aria-label="Abrir menú" aria-expanded="false" aria-controls="main-nav">Menú <span aria-hidden="true">☰</span></button><nav class="main-nav" id="main-nav" aria-label="Principal"><a href="#visitanos">Soy nuevo</a><a href="#pasos">Siguiente paso</a><a href="#grupos">Grupos</a><a href="#eventos">Eventos</a><a href="#mensajes">Mensajes</a></nav><a class="header-cta" href="#visitanos">Quiero visitar Caudal ↗</a></header>'''
     body=header+'<main id="contenido">'+hero(theme)+fragment('quick')+''.join(fragment(k) for k in ORDERS[theme])+'</main>'+fragment('footer')
     (ROOT/(slug+'.html')).write_text(document(name,body,theme))
@@ -76,7 +92,13 @@ if (ROOT/'01-el-encuentro.html').exists():
 if (ROOT/'02-casa-abierta.html').exists():
     (ROOT/'01-casa-abierta.html').write_text((ROOT/'02-casa-abierta.html').read_text())
 
-cards=''.join(f'''<article class="concept-card preview-{t}"><a class="concept-preview" href="{s}.html"><img src="previews/{s}-light.jpg" data-preview-light="previews/{s}-light.jpg" data-preview-dark="previews/{s}-dark.jpg" alt="Vista de la propuesta {escape(n)}" loading="lazy"><span class="preview-number">0{i+1}</span><span class="preview-word">{escape(n)}</span>{'<span class="direction-badge">Dirección principal</span>' if i==0 else '<span class="direction-badge">Scroll experimental</span>' if i==5 else ''}</a><div class="concept-details"><span class="eyebrow">Propuesta 0{i+1}</span><h2><a href="{s}.html">{escape(n)} <span aria-hidden="true">↗</span></a></h2><p>{escape(tag)}</p><small>{escape(d)}</small><div class="theme-links"><a href="{s}.html?theme=light">☀ Versión clara ↗</a><a href="{s}.html?theme=dark">◐ Versión oscura ↗</a></div></div></article>''' for i,(s,n,tag,d,t) in enumerate(CONCEPTS))
-gallery=f'''<main class="gallery wrap"><header class="gallery-header">{BRAND_GALLERY}<div class="gallery-tools">{THEME_CONTROL}<a class="eyebrow" href="../index.html" style="font-weight:700; color:var(--accent);">Modo Presentación (Slides) ⛶</a><a class="eyebrow" href="../referentes/index.html">Dossier de referentes ↗</a></div></header><div class="gallery-intro"><p class="eyebrow">Seis propuestas. Una misma iglesia.</p><h1>Encontrar la forma<br>de <em>sentirnos cerca.</em></h1><p>Seis direcciones, cada una en claro y oscuro. El encuentro es la dirección que proponemos: la escena de la reunión, la frase de casa y la semana a la vista. Un lugar para vos explora una experiencia con profundidad y movimiento al recorrer la página.</p></div><div class="concept-grid">{cards}</div><section class="gallery-notes"><h2>Cómo comparar las propuestas</h2><div><p><strong>Primera impresión.</strong> ¿Cuál transmite mejor la identidad y la bienvenida de Caudal?</p><p><strong>Facilidad de uso.</strong> ¿Se entiende cómo visitar, encontrar un grupo o ver un mensaje?</p><p><strong>Contenido y fotografía.</strong> ¿Qué equilibrio entre personas, mensajes y actividades representa mejor a la iglesia?</p></div><p>Fotografías de la web actual y de los canales de Caudal. Textos demo basados en el documento de trabajo. La agenda es ilustrativa; los horarios y contactos deben confirmarse antes de publicar. El modo podcast queda para una etapa posterior.</p><a href="https://caudaldevida.net/" target="_blank" rel="noopener">Consultar la web existente ↗</a></section><footer class="gallery-footer">Caudal de Vida · Prototipos locales para revisión · Octubre de 2026</footer></main>'''
-(ROOT/'index.html').write_text(document('Seis propuestas para el inicio',gallery,'gallery-page'))
-print('Generados: galería y seis prototipos HTML.')
+def badge(i):
+    if i == 0: return '<span class="direction-badge">Dirección principal</span>'
+    if i == 5: return '<span class="direction-badge">Scroll experimental</span>'
+    if i == 6: return '<span class="direction-badge">Secundarios del manual</span>'
+    return ''
+
+cards=''.join(f'''<article class="concept-card preview-{t}"><a class="concept-preview" href="{s}.html"><img src="previews/{s}-light.jpg" data-preview-light="previews/{s}-light.jpg" data-preview-dark="previews/{s}-dark.jpg" alt="Vista de la propuesta {escape(n)}" loading="lazy"><span class="preview-number">{i+1:02d}</span><span class="preview-word">{escape(n)}</span>{badge(i)}</a><div class="concept-details"><span class="eyebrow">Propuesta {i+1:02d}</span><h2><a href="{s}.html">{escape(n)} <span aria-hidden="true">↗</span></a></h2><p>{escape(tag)}</p><small>{escape(d)}</small><div class="theme-links"><a href="{s}.html?theme=light">☀ Versión clara ↗</a><a href="{s}.html?theme=dark">◐ Versión oscura ↗</a></div></div></article>''' for i,(s,n,tag,d,t) in enumerate(CONCEPTS))
+gallery=f'''{shell_nav('demos')}<main class="gallery wrap"><div class="gallery-intro"><p class="eyebrow">Demos</p><h1>Elegí una<br><em>dirección.</em></h1><p>Siete versiones de la misma iglesia. El encuentro usa los colores principales. La 07 usa los secundarios.</p></div><div class="concept-grid">{cards}</div><section class="gallery-notes"><p>Fotografías de Caudal. La agenda es de muestra. Horarios y contactos se confirman antes de publicar.</p></section><footer class="gallery-footer">Caudal de Vida · Prototipos locales para revisión · Octubre de 2026</footer></main>'''
+(ROOT/'index.html').write_text(document('Propuestas para el inicio',gallery,'gallery-page'))
+print('Generados: galería y prototipos HTML.')

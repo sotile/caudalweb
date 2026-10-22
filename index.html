@@ -3,9 +3,11 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Caudal de Vida · Presentación Interactiva (Propuestas, Referentes y Estrategia)</title>
-  <meta name="description" content="Presentación interactiva adaptable para Caudal de Vida: diagnóstico, 12 referentes, 6 propuestas estéticas interactivas, preguntas estratégicas y hoja de ruta.">
+  <title>Caudal de Vida · Presentación Interactiva (Propuestas y Estrategia)</title>
+  <meta name="description" content="Presentación interactiva adaptable para Caudal de Vida: diagnóstico, propuestas estéticas interactivas, preguntas estratégicas y hoja de ruta.">
   <link rel="icon" href="prototipos/assets/logo-social.jpg">
+  <script src="shared/theme-init.js"></script>
+  <link rel="stylesheet" href="shared/nav.css">
   <style>
     /* ==========================================================================
        TIPOGRAFÍAS Y COLORES OFICIALES - MANUAL DE MARCA CAUDAL 2025
@@ -150,6 +152,12 @@
       display: flex;
       align-items: center;
       gap: 10px;
+    }
+
+    .deck-nav {
+      display: flex;
+      align-items: center;
+      gap: 8px;
     }
 
     .btn-ctrl {
@@ -616,11 +624,7 @@
       display: flex;
       flex-direction: column;
       transition: var(--transition);
-      cursor: pointer;
-    }
-
-    .referente-mini-card:hover {
-      border-color: var(--accent);
+      cursor: default;
     }
 
     .referente-mini-thumb {
@@ -1189,22 +1193,19 @@
 <body>
 
   <!-- TOP DECK HEADER -->
-  <header class="deck-header">
-    <a href="#" class="deck-brand" aria-label="Caudal de Vida">
-      <img class="logo-dark" src="prototipos/assets/logo-caudal-blanco.png" alt="Caudal de Vida">
-      <img class="logo-light" src="prototipos/assets/logo-caudal-negro.png" alt="Caudal de Vida">
+  <header class="caudal-nav is-fixed">
+    <a class="caudal-nav-brand" href="index.html#slide-1" aria-label="Caudal de Vida">
+      <img class="logo-dark" src="prototipos/assets/logo-caudal-blanco.png" alt="">
+      <img class="logo-light" src="prototipos/assets/logo-caudal-negro.png" alt="">
     </a>
-
-    <div class="deck-controls">
-      <button class="btn-ctrl" id="btn-overview" title="Ver cuadrícula de diapositivas (G)">
-        <span aria-hidden="true">▦</span> Índice
-      </button>
-      <button class="btn-ctrl" id="btn-theme" title="Cambiar tema claro/oscuro (T)">
-        <span id="theme-icon">◐</span> <span id="theme-label">Claro</span>
-      </button>
-      <button class="btn-ctrl" id="btn-fullscreen" title="Pantalla completa (F)">
-        <span aria-hidden="true">⛶</span> Presentar
-      </button>
+    <nav class="caudal-nav-links" aria-label="Presentación">
+      <a href="index.html#slide-1" aria-current="page">Presentación</a>
+      <a href="prototipos/index.html">Demos</a>
+    </nav>
+    <div class="caudal-nav-tools">
+      <button class="btn-ctrl" id="btn-overview" title="Ver cuadrícula de diapositivas (G)" type="button">Índice</button>
+      <button class="caudal-theme" type="button" data-caudal-theme aria-label="Activar modo claro"><span data-theme-icon aria-hidden="true">☀</span><span data-theme-label>Claro</span></button>
+      <button class="btn-ctrl" id="btn-fullscreen" title="Pantalla completa (F)" type="button">Presentar</button>
       <div class="slide-badge" id="slide-indicator">01 / 09</div>
     </div>
   </header>
@@ -1217,26 +1218,26 @@
       <img src="prototipos/assets/1800x892-01.jpg" class="hero-banner-image" alt="Comunidad Caudal de Vida">
       <div class="hero-content">
         <div class="hero-badge">
-          <span>✳</span> Presentación de Proyecto Digital · Manual de Marca 2025 Integrado
+          <span>✳</span> Presentación · Caudal de Vida
         </div>
         <h1 class="hero-title">
           Un hogar para muchos.<br><em>Un lugar para vos.</em>
         </h1>
         <p class="hero-desc">
-          Propuesta estratégica, dossier de referentes, prototipos navegables con identidad oficial (Neue Montreal y Geometos Neue) y hoja de ruta para la nueva web de la iglesia Caudal de Vida.
+          Propuesta de diseño, demos interactivas de la nueva web y los pasos para publicarla.
         </p>
         <div class="hero-meta-grid">
           <div class="hero-meta-card">
-            <strong>12 Referentes</strong>
-            <p>Análisis de escala, buenas prácticas y prevención de sobrecarga operativa.</p>
+            <strong>Diagnóstico</strong>
+            <p>De folleto estático a hogar digital accesible.</p>
           </div>
           <div class="hero-meta-card">
-            <strong>6 Prototipos Reales</strong>
-            <p>Con tipografías oficiales, isologo vectorial, paleta 2025 y modo claro/oscuro.</p>
+            <strong>7 demos</strong>
+            <p>La misma iglesia, con la paleta del manual.</p>
           </div>
           <div class="hero-meta-card">
-            <strong>8 Decisiones Clave</strong>
-            <p>Cuestionario sintetizado para alinear la reunión pastoral en 45 minutos.</p>
+            <strong>8 decisiones</strong>
+            <p>Para cerrar el alcance en la reunión.</p>
           </div>
         </div>
         <div style="margin-top: 10px;">
@@ -1254,7 +1255,7 @@
           <div>
             <span class="eyebrow-tag">01 · Diagnóstico y Oportunidad</span>
             <h2 class="slide-title">De folleto estático a <em>hogar digital.</em></h2>
-            <p class="slide-subtitle">La web actual tiene el contenido, pero su orden genera fricción. Así transformamos los 4 puntos críticos:</p>
+            <p class="slide-subtitle">El contenido está. El orden, no.</p>
           </div>
           <a href="https://caudaldevida.net/" target="_blank" rel="noopener" class="btn-ctrl" style="font-size: 0.78rem;">
             Ver web actual de Caudal ↗
@@ -1353,61 +1354,58 @@
       </div>
     </section>
 
-    <!-- SLIDE 3: REFERENTES -->
+    <!-- SLIDE 3: CRITERIOS Y BUENAS PRÁCTICAS -->
     <section class="slide" data-index="2">
       <div class="slide-container" style="max-width: 1400px;">
         <div style="display: flex; justify-content: space-between; align-items: flex-end; flex-wrap: wrap; gap: 12px;">
           <div>
-            <span class="eyebrow-tag">02 · Análisis de mercado</span>
-            <h2 class="slide-title">Aprendizajes de <em>doce referencias.</em></h2>
-            <p class="slide-subtitle">Cinco lecturas para Caudal. El dossier completo conserva las doce fichas, incluidas las que todavía no se pueden identificar.</p>
+            <span class="eyebrow-tag">02 · Criterios validados</span>
+            <h2 class="slide-title">Buenas prácticas <em>adoptadas para Caudal.</em></h2>
+            <p class="slide-subtitle">Patrones de iglesias de referencia incorporados a nuestra propuesta sin sobrecargar al equipo:</p>
           </div>
-          <a href="referentes/index.html" target="_blank" class="btn-ctrl">
-            Abrir Dossier Completo <span aria-hidden="true">↗</span>
-          </a>
         </div>
 
         <div class="referentes-scroll">
-          <div class="referente-mini-card" onclick="openPreview('referentes/index.html#elevation')">
+          <div class="referente-mini-card">
             <img src="referentes/capturas/elevation-desktop.jpg" class="referente-mini-thumb" alt="Elevation">
             <div class="referente-mini-body">
-              <h4>Elevation Church <span aria-hidden="true">↗</span></h4>
+              <h4>Elevation Church</h4>
               <p><b>Qué tomar:</b> El último mensaje como puerta de entrada a la vida de la iglesia y biblioteca organizada por series.</p>
               <span class="referente-mini-tag">Contenido + Video</span>
             </div>
           </div>
 
-          <div class="referente-mini-card" onclick="openPreview('referentes/index.html#saddleback')">
+          <div class="referente-mini-card">
             <img src="referentes/capturas/saddleback-desktop.jpg" class="referente-mini-thumb" alt="Saddleback">
             <div class="referente-mini-body">
-              <h4>Saddleback <span aria-hidden="true">↗</span></h4>
-              <p><b>Qué tomar:</b> Navegación por verbos y necesidades humanas: "Quiero conocer a Jesús", "Quiero bautizarme", "Servir".</p>
+              <h4>Saddleback</h4>
+              <p><b>Qué tomar:</b> Navegación por verbos y necesidades humanas: "Soy nuevo", "Quiero bautizarme", "Servir".</p>
               <span class="referente-mini-tag">Siguiente Paso</span>
             </div>
           </div>
 
-          <div class="referente-mini-card" onclick="openPreview('referentes/index.html#ieb-cordoba')">
+          <div class="referente-mini-card">
             <img src="referentes/capturas/ieb-cordoba-desktop.jpg" class="referente-mini-thumb" alt="IEB Córdoba">
             <div class="referente-mini-body">
-              <h4>IEB Córdoba (España) <span aria-hidden="true">↗</span></h4>
+              <h4>IEB Córdoba (España)</h4>
               <p><b>Qué tomar:</b> Horario de reunión inmediatamente visible en el primer bloque y balance con vida semanal.</p>
               <span class="referente-mini-tag">Inmediatez</span>
             </div>
           </div>
 
-          <div class="referente-mini-card" onclick="openPreview('referentes/index.html#rey-jesus')">
+          <div class="referente-mini-card">
             <img src="referentes/capturas/rey-jesus-desktop.jpg" class="referente-mini-thumb" alt="El Rey Jesús">
             <div class="referente-mini-body">
-              <h4>El Rey Jesús <span aria-hidden="true">↗</span></h4>
+              <h4>El Rey Jesús</h4>
               <p><b>Qué tomar:</b> Horarios y bienvenida como primeras acciones. Es el par local más claro para una iglesia de barrio.</p>
               <span class="referente-mini-tag">Primera visita</span>
             </div>
           </div>
 
-          <div class="referente-mini-card" onclick="openPreview('referentes/index.html#missio')">
+          <div class="referente-mini-card">
             <img src="referentes/capturas/missio-desktop.jpg" class="referente-mini-thumb" alt="Missio Córdoba">
             <div class="referente-mini-body">
-              <h4>Missio (Argentina) <span aria-hidden="true">↗</span></h4>
+              <h4>Missio (Argentina)</h4>
               <p><b>Qué tomar:</b> Reutilizar plataformas ya existentes (YouTube, Spotify) en lugar de duplicar esfuerzos de subida.</p>
               <span class="referente-mini-tag">Eficiencia</span>
             </div>
@@ -1422,11 +1420,11 @@
         <div style="display: flex; justify-content: space-between; align-items: flex-end; flex-wrap: wrap; gap: 12px;">
           <div>
             <span class="eyebrow-tag">03 · Exploración visual</span>
-            <h2 class="slide-title">Seis direcciones. <em>Una misma iglesia.</em></h2>
-            <p class="slide-subtitle">Prototipos navegables completos con modo claro/oscuro, diálogo de video oficial y adaptabilidad móvil.</p>
+            <h2 class="slide-title">La paleta del manual. <em>Una misma iglesia.</em></h2>
+            <p class="slide-subtitle">El encuentro usa los principales. La 07 repite esa escena con los tres secundarios. Las otras direcciones dejan el bordó y el lila.</p>
           </div>
           <a href="prototipos/index.html" target="_blank" class="btn-ctrl">
-            Ver Galería de Prototipos <span aria-hidden="true">↗</span>
+            Ver demos <span aria-hidden="true">↗</span>
           </a>
         </div>
 
@@ -1435,11 +1433,11 @@
           <div class="proposal-card featured">
             <span class="proposal-badge">Dirección Principal</span>
             <div class="proposal-thumb-wrap">
-              <img src="prototipos/previews/01-el-encuentro-dark.jpg?v=20261020" alt="El encuentro">
+              <img src="prototipos/previews/01-el-encuentro-dark.jpg?v=20261021" alt="El encuentro">
             </div>
             <div class="proposal-body">
               <h4>01 · El encuentro</h4>
-              <p>Reunión y retrato, azul y arena, una sola invitación a visitar.</p>
+              <p>Principales del manual: azul #0152cd, noche y hueso. Una sola invitación a visitar.</p>
               <div class="proposal-actions">
                 <button class="btn-action primary" onclick="openPreview('prototipos/01-el-encuentro.html')">Ver Demo</button>
                 <a href="prototipos/01-el-encuentro.html" target="_blank" class="btn-action">Abrir ↗</a>
@@ -1450,11 +1448,11 @@
           <!-- 02 -->
           <div class="proposal-card">
             <div class="proposal-thumb-wrap">
-              <img src="prototipos/previews/02-casa-abierta-light.jpg" alt="Casa abierta">
+              <img src="prototipos/previews/02-casa-abierta-light.jpg?v=20261021" alt="Casa abierta">
             </div>
             <div class="proposal-body">
               <h4>02 · Casa abierta</h4>
-              <p>Editorial cálida, retratos rectangulares, crema y bordó.</p>
+              <p>Retratos rectangulares. El coral secundario reemplaza al bordó.</p>
               <div class="proposal-actions">
                 <button class="btn-action primary" onclick="openPreview('prototipos/02-casa-abierta.html')">Ver Demo</button>
                 <a href="prototipos/02-casa-abierta.html" target="_blank" class="btn-action">Abrir ↗</a>
@@ -1465,11 +1463,11 @@
           <!-- 03 -->
           <div class="proposal-card">
             <div class="proposal-thumb-wrap">
-              <img src="prototipos/previews/03-vida-para-la-ciudad-light.jpg" alt="Vida para la Ciudad">
+              <img src="prototipos/previews/03-vida-para-la-ciudad-light.jpg?v=20261021" alt="Vida para la Ciudad">
             </div>
             <div class="proposal-body">
               <h4>03 · Vida para la Ciudad</h4>
-              <p>Retícula editorial urbana y protagonismo de la misión.</p>
+              <p>Retícula editorial. Azul secundario y azul primario.</p>
               <div class="proposal-actions">
                 <button class="btn-action primary" onclick="openPreview('prototipos/03-vida-para-la-ciudad.html')">Ver Demo</button>
                 <a href="prototipos/03-vida-para-la-ciudad.html" target="_blank" class="btn-action">Abrir ↗</a>
@@ -1480,11 +1478,11 @@
           <!-- 04 -->
           <div class="proposal-card">
             <div class="proposal-thumb-wrap">
-              <img src="prototipos/previews/04-tu-siguiente-paso-light.jpg" alt="Tu siguiente paso">
+              <img src="prototipos/previews/04-tu-siguiente-paso-light.jpg?v=20261021" alt="Tu siguiente paso">
             </div>
             <div class="proposal-body">
               <h4>04 · Tu siguiente paso</h4>
-              <p>Señalética y recorridos claros por los 4 ejes de la misión.</p>
+              <p>Recorrido de cuatro ejes. Azul primario, cielo y coral.</p>
               <div class="proposal-actions">
                 <button class="btn-action primary" onclick="openPreview('prototipos/04-tu-siguiente-paso.html')">Ver Demo</button>
                 <a href="prototipos/04-tu-siguiente-paso.html" target="_blank" class="btn-action">Abrir ↗</a>
@@ -1495,11 +1493,11 @@
           <!-- 05 -->
           <div class="proposal-card">
             <div class="proposal-thumb-wrap">
-              <img src="prototipos/previews/05-esta-semana-light.jpg" alt="Esta semana">
+              <img src="prototipos/previews/05-esta-semana-light.jpg?v=20261021" alt="Esta semana">
             </div>
             <div class="proposal-body">
               <h4>05 · Esta semana</h4>
-              <p>Portada modular de actualidad, mensajes y agenda.</p>
+              <p>Actualidad, mensajes y agenda. Azul secundario y cielo.</p>
               <div class="proposal-actions">
                 <button class="btn-action primary" onclick="openPreview('prototipos/05-esta-semana.html')">Ver Demo</button>
                 <a href="prototipos/05-esta-semana.html" target="_blank" class="btn-action">Abrir ↗</a>
@@ -1511,14 +1509,29 @@
           <div class="proposal-card">
             <span class="proposal-badge" style="background: var(--gold);">Experimental</span>
             <div class="proposal-thumb-wrap">
-              <img src="prototipos/previews/06-un-lugar-para-vos-light.jpg" alt="Un lugar para vos">
+              <img src="prototipos/previews/06-un-lugar-para-vos-light.jpg?v=20261021" alt="Un lugar para vos">
             </div>
             <div class="proposal-body">
               <h4>06 · Un lugar para vos</h4>
-              <p>Scroll narrativo continuo en 3 capítulos y tipografía de gran escala.</p>
+              <p>Scroll en tres capítulos. Noche, azul primario y cielo.</p>
               <div class="proposal-actions">
                 <button class="btn-action primary" onclick="openPreview('prototipos/06-un-lugar-para-vos.html')">Ver Demo</button>
                 <a href="prototipos/06-un-lugar-para-vos.html" target="_blank" class="btn-action">Abrir ↗</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="proposal-card">
+            <span class="proposal-badge">Secundarios</span>
+            <div class="proposal-thumb-wrap">
+              <img src="prototipos/previews/07-el-encuentro-secundarios-light.jpg?v=20261021" alt="El encuentro con secundarios">
+            </div>
+            <div class="proposal-body">
+              <h4>07 · El encuentro · secundarios</h4>
+              <p>La misma escena. Cielo 125/198/224, coral 238/101/79 y azul 38/109/169.</p>
+              <div class="proposal-actions">
+                <button class="btn-action primary" onclick="openPreview('prototipos/07-el-encuentro-secundarios.html')">Ver Demo</button>
+                <a href="prototipos/07-el-encuentro-secundarios.html" target="_blank" class="btn-action">Abrir ↗</a>
               </div>
             </div>
           </div>
@@ -1537,7 +1550,7 @@
 
         <div class="spotlight-layout">
           <div class="spotlight-preview-frame">
-            <img src="prototipos/previews/01-el-encuentro-dark.jpg?v=20261020" alt="Preview El Encuentro">
+            <img src="prototipos/previews/01-el-encuentro-dark.jpg?v=20261021" alt="Preview El Encuentro">
           </div>
 
           <div class="spotlight-details">
@@ -1570,7 +1583,7 @@
                 <span class="feat-icon">04</span>
                 <div class="feat-text">
                   <strong>Identidad Oficial Manual 2025</strong>
-                  <p>Tipografía Neue Montreal para lectura web, Geometos Neue para impacto, paleta calibrada (#0152cd / #00082e) y horarios confirmados de reunión.</p>
+                  <p>Geometos Neue y Neue Montreal. Principales #0152cd, #00082e y #f7f4f1. Los tres secundarios están en la propuesta 07.</p>
                 </div>
               </div>
             </div>
@@ -1581,6 +1594,9 @@
               </button>
               <a href="prototipos/01-el-encuentro.html?theme=light" target="_blank" class="btn-ctrl">
                 Ver en modo claro ↗
+              </a>
+              <a href="prototipos/07-el-encuentro-secundarios.html" target="_blank" class="btn-ctrl">
+                Ver secundarios ↗
               </a>
             </div>
           </div>
@@ -1728,8 +1744,8 @@
           <div class="q-item" onclick="toggleQuestion(this)">
             <div class="q-check">✓</div>
             <div class="q-content">
-              <strong>8. Hosting y administración de dominio</strong>
-              <p>¿Quién administra caudaldevida.net y qué presupuesto se contempla para el alojamiento estático?</p>
+              <strong>8. Dominio y hosting</strong>
+              <p>¿Redirigimos caudaldevida.net a caudaldevida.com? El hosting queda a definir.</p>
             </div>
           </div>
         </div>
@@ -1784,7 +1800,7 @@
             <h4>Lanzamiento</h4>
             <ul>
               <li>Aprobación del preview pastoral.</li>
-              <li>DNS de caudaldevida.net con el responsable del dominio.</li>
+              <li>Redirección de caudaldevida.net a caudaldevida.com. Hosting a definir.</li>
               <li>Sesión de práctica con quien va a editar.</li>
               <li>Publicación y comprobación de formularios.</li>
             </ul>
@@ -1940,7 +1956,7 @@
         const titles = [
           '01 · Portada del Proyecto',
           '02 · Diagnóstico y Oportunidad',
-          '03 · Análisis de 12 Referentes',
+          '03 · Criterios y Buenas Prácticas',
           '04 · Seis Propuestas Estéticas',
           '05 · Foco en "El encuentro (01)"',
           '06 · Recorridos de Siguiente Paso',
@@ -2037,6 +2053,8 @@
       const iframe = document.getElementById('preview-iframe');
       const extLink = document.getElementById('preview-external-link');
       const title = document.getElementById('preview-title');
+      const theme = document.documentElement.getAttribute('data-theme') || 'dark';
+      if (!/[?&]theme=/.test(url)) url += (url.includes('?') ? '&' : '?') + 'theme=' + theme;
 
       iframe.src = url;
       extLink.href = url;
@@ -2051,36 +2069,6 @@
       modal.classList.remove('open');
       modal.setAttribute('aria-hidden', 'true');
       iframe.src = 'about:blank';
-    }
-
-    // THEME CONTROLLER
-    function toggleTheme() {
-      const html = document.documentElement;
-      const current = html.getAttribute('data-theme') || 'dark';
-      const next = current === 'dark' ? 'light' : 'dark';
-      html.setAttribute('data-theme', next);
-      localStorage.setItem('caudal-deck-theme', next);
-      updateThemeLabels(next);
-    }
-
-    function updateThemeLabels(theme) {
-      const label = document.getElementById('theme-label');
-      const icon = document.getElementById('theme-icon');
-      if (theme === 'dark') {
-        label.textContent = 'Claro';
-        icon.textContent = '◐';
-      } else {
-        label.textContent = 'Oscuro';
-        icon.textContent = '◑';
-      }
-    }
-    document.getElementById('btn-theme').onclick = toggleTheme;
-
-    // Load saved theme
-    const savedTheme = localStorage.getItem('caudal-deck-theme');
-    if (savedTheme) {
-      document.documentElement.setAttribute('data-theme', savedTheme);
-      updateThemeLabels(savedTheme);
     }
 
     // FULLSCREEN CONTROLLER
@@ -2123,6 +2111,7 @@
       });
     } catch(e) {}
   </script>
+  <script src="shared/nav.js" defer></script>
 </body>
 </html>
 
